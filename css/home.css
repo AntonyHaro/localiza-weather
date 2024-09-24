@@ -1,26 +1,44 @@
+:root {
+    --text-color: hsl(214, 22%, 14%);
+    --primary-bgc: hsl(230, 50%, 90%);
+    --secondary-bgc: hsl(230, 80%, 88%);
+    --terciary-bgc: hsl(212, 21%, 77%);
+}
+
 body {
-    background-color: var(--body-background);
-    color: hsl(212, 8%, 15%);
+    color: var(--text-color);
     min-height: 100vh;
     display: grid;
-    padding: 3rem;
+    grid-template-columns: 3fr 1fr;
     gap: 1rem;
+    padding: 3rem;
     font-size: 14px;
+}
+
+.main-container {
+    display: grid;
+    gap: 1rem;
 }
 
 header,
 main,
 aside {
-    background-color: hsl(212, 30%, 95%);
-    padding: 2rem;
+    background-color: var(--primary-bgc);
+}
+
+header,
+main,
+section,
+aside {
     border-radius: 5px;
 }
 
 header {
+    padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
+    gap: 4rem;
 }
 
 header h1 {
@@ -30,36 +48,111 @@ header h1 {
 header input {
     background-color: transparent;
     flex: 1;
-    padding: 0.7em;
+    padding: 0.4em;
     border-radius: 5px;
     border: 1px solid gray;
+    outline: none;
 }
 
 main {
+    padding: 2rem;
+    display: grid;
+    gap: 3rem;
+}
+
+#main-info {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.main-city {
+    font-size: 2.2em;
+}
+
+.main-temperature {
+    margin-top: 1%;
+    font-weight: bold;
+    font-size: 3em;
+}
+
+#today-forecast {
+    background-color: var(--secondary-bgc);
+    padding: 2rem;
     display: grid;
     gap: 1rem;
 }
 
 .forecast-container {
+    width: 100%;
     border-radius: 5px;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    display: flex;
     gap: 1rem;
 }
 
 .forecast-item {
-    border: 2px solid rgb(179, 179, 179);
+    flex: 1;
+    background-color: var(--terciary-bgc);
+    display: grid;
+    gap: 1rem;
+    place-items: center;
     padding: 1rem;
     border-radius: 5px;
-    display: grid;
-    gap: 0.7rem;
 }
 
-.day {
-    font-size: 1.1em;
+.forecast-item .hour {
+    color: gray;
 }
 
-.day-temperature {
+.forecast-item img {
+    height: 50px;
+}
+
+.hour-temperature {
+    font-size: 1.2em;
     font-weight: bold;
-    font-size: 1.7em;
+}
+
+#air-info {
+    background-color: var(--secondary-bgc);
+    padding: 2rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.air-info-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.air-info-item {
+    background-color: var(--terciary-bgc);
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+aside {
+    height: fit-content;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.week-forecast {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.week-item {
+    background-color: var(--terciary-bgc);
+    padding: 1rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.week-item img {
+    height: 30px;
 }
