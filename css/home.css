@@ -1,0 +1,65 @@
+body {
+    background-color: var(--body-background);
+    color: hsl(212, 8%, 15%);
+    min-height: 100vh;
+    display: grid;
+    padding: 3rem;
+    gap: 1rem;
+    font-size: 14px;
+}
+
+header,
+main,
+aside {
+    background-color: hsl(212, 30%, 95%);
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+header input {
+    background-color: transparent;
+    flex: 1;
+    padding: 0.7em;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+main {
+    display: grid;
+    gap: 1rem;
+}
+
+.forecast-container {
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1rem;
+}
+
+.forecast-item {
+    border: 2px solid rgb(179, 179, 179);
+    padding: 1rem;
+    border-radius: 5px;
+    display: grid;
+    gap: 0.7rem;
+}
+
+.day {
+    font-size: 1.1em;
+}
+
+.day-temperature {
+    font-weight: bold;
+    font-size: 1.7em;
+}
