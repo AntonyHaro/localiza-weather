@@ -8,20 +8,37 @@
         <link rel="stylesheet" href="css/home.css" />
     </head>
     <body>
-        <div class="main-container">
-            <header>
-                <h1>BrasilWeather</h1>
-                <input type="text" placeholder="pesquisar" />
-                <h2>24.09.2024</h2>
-            </header>
-            <main>
-                <section id="main-info">
-                    <p class="main-city">São Paulo</p>
-                    <p>Chances de chuva: 20%</p>
-                    <p class="main-temperature">32°c</p>
-                </section>
-                <section id="today-forecast">
-                    <p>Previsão de hoje:</p>
+        <header>
+            <h1>BrasilWeather</h1>
+            <ul>
+                <li><a href="">Início</a></li>
+                <li><a href="">Histórico de pesquisas</a></li>
+                <li><a href="">Localidades populares</a></li>
+            </ul>
+            <!-- <h3>24.09.2024</h3> -->
+        </header>
+        <main>
+            <section id="main-section">
+                <div class="main-info">
+                    <h1>São Paulo, 23°c</h1>
+                    <form action="">
+                        <p class="label-container">
+                            <label for="local">Pesquisar localidade:</label>
+                            <input
+                                type="text"
+                                name="local"
+                                id="local"
+                                placeholder="localidade:"
+                            />
+                        </p>
+                    </form>
+                    <div class="link-container">
+                        <a href="">- previsão da semana</a>
+                        <a href="">- histórico de pesquisas</a>
+                    </div>
+                </div>
+                <div id="today-forecast">
+                    <p class="section-header">Previsão de hoje:</p>
                     <div class="forecast-container">
                         <div class="forecast-item">
                             <p class="hour">12:00</p>
@@ -54,76 +71,78 @@
                             <p class="hour-temperature">28°c</p>
                         </div>
                     </div>
-                </section>
-                <section id="air-info">
-                    <h1>Condições do ar</h1>
-                    <div class="air-info-container">
-                        <div class="air-info-item">
-                            <p>Sensação de temperatura</p>
-                            <h1>30°</h1>
-                        </div>
-                        <div class="air-info-item">
-                            <p>Sensação de temperatura</p>
-                            <h1>30°</h1>
-                        </div>
-                        <div class="air-info-item">
-                            <p>Sensação de temperatura</p>
-                            <h1>30°</h1>
-                        </div>
-                        <div class="air-info-item">
-                            <p>Sensação de temperatura</p>
-                            <h1>30°</h1>
-                        </div>
+                </div>
+            </section>
+
+            <section id="air-info">
+                <h1 class="section-header">Condições do ar</h1>
+                <div class="air-info-container">
+                    <div class="air-info-item">
+                        <p>Sensação de temperatura</p>
+                        <h1>30°</h1>
                     </div>
-                </section>
-            </main>
-        </div>
-        <aside>
-            <h1>Previsão da semana</h1>
-            <div class="week-forecast">
-                <div class="week-item">
-                    <p>Hoje</p>
-                    <img src="assets/nublado.png" alt="" />
-                    <p>Ensolarado</p>
-                    <p>25°c/32°c</p>
+                    <div class="air-info-item">
+                        <p>Sensação de temperatura</p>
+                        <h1>30°</h1>
+                    </div>
+                    <div class="air-info-item">
+                        <p>Sensação de temperatura</p>
+                        <h1>30°</h1>
+                    </div>
+                    <div class="air-info-item">
+                        <p>Sensação de temperatura</p>
+                        <h1>30°</h1>
+                    </div>
                 </div>
-                <div class="week-item">
-                    <p>Hoje</p>
-                    <img src="assets/nublado.png" alt="" />
-                    <p>Ensolarado</p>
-                    <p>25°c/32°c</p>
+            </section>
+
+            <section id="week-forecast">
+                <h1 class="section-header">Previsão da semana</h1>
+                <div class="week-forecast-container">
+                    <div class="week-item">
+                        <p>Hoje</p>
+                        <img src="assets/nublado.png" alt="" />
+                        <p>Ensolarado</p>
+                        <p>25°c/32°c</p>
+                    </div>
+                    <div class="week-item">
+                        <p>Hoje</p>
+                        <img src="assets/nublado.png" alt="" />
+                        <p>Ensolarado</p>
+                        <p>25°c/32°c</p>
+                    </div>
+                    <div class="week-item">
+                        <p>Hoje</p>
+                        <img src="assets/nublado.png" alt="" />
+                        <p>Ensolarado</p>
+                        <p>25°c/32°c</p>
+                    </div>
+                    <div class="week-item">
+                        <p>Hoje</p>
+                        <img src="assets/nublado.png" alt="" />
+                        <p>Ensolarado</p>
+                        <p>25°c/32°c</p>
+                    </div>
+                    <div class="week-item">
+                        <p>Hoje</p>
+                        <img src="assets/nublado.png" alt="" />
+                        <p>Ensolarado</p>
+                        <p>25°c/32°c</p>
+                    </div>
+                    <div class="week-item">
+                        <p>Hoje</p>
+                        <img src="assets/nublado.png" alt="" />
+                        <p>Ensolarado</p>
+                        <p>25°c/32°c</p>
+                    </div>
+                    <div class="week-item">
+                        <p>Hoje</p>
+                        <img src="assets/nublado.png" alt="" />
+                        <p>Ensolarado</p>
+                        <p>25°c/32°c</p>
+                    </div>
                 </div>
-                <div class="week-item">
-                    <p>Hoje</p>
-                    <img src="assets/nublado.png" alt="" />
-                    <p>Ensolarado</p>
-                    <p>25°c/32°c</p>
-                </div>
-                <div class="week-item">
-                    <p>Hoje</p>
-                    <img src="assets/nublado.png" alt="" />
-                    <p>Ensolarado</p>
-                    <p>25°c/32°c</p>
-                </div>
-                <div class="week-item">
-                    <p>Hoje</p>
-                    <img src="assets/nublado.png" alt="" />
-                    <p>Ensolarado</p>
-                    <p>25°c/32°c</p>
-                </div>
-                <div class="week-item">
-                    <p>Hoje</p>
-                    <img src="assets/nublado.png" alt="" />
-                    <p>Ensolarado</p>
-                    <p>25°c/32°c</p>
-                </div>
-                <div class="week-item">
-                    <p>Hoje</p>
-                    <img src="assets/nublado.png" alt="" />
-                    <p>Ensolarado</p>
-                    <p>25°c/32°c</p>
-                </div>
-            </div>
-        </aside>
+            </section>
+        </main>
     </body>
 </html>

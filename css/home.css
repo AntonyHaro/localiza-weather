@@ -1,29 +1,18 @@
 :root {
     --text-color: hsl(214, 22%, 14%);
-    --primary-bgc: hsl(230, 50%, 90%);
-    --secondary-bgc: hsl(230, 80%, 88%);
-    --terciary-bgc: hsl(212, 21%, 77%);
+    --primary-bgc: hsl(0, 0%, 88%);
+    --secondary-bgc: hsl(0, 0%, 88%);
+    --terciary-bgc: hsl(0, 0%, 81%);
 }
 
 body {
     color: var(--text-color);
     min-height: 100vh;
     display: grid;
-    grid-template-columns: 3fr 1fr;
-    gap: 1rem;
+    gap: 3rem;
     padding: 3rem;
-    font-size: 14px;
-}
-
-.main-container {
-    display: grid;
-    gap: 1rem;
-}
-
-header,
-main,
-aside {
-    background-color: var(--primary-bgc);
+    padding-bottom: 6rem;
+    font-size: 16px;
 }
 
 header,
@@ -34,68 +23,114 @@ aside {
 }
 
 header {
-    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--primary-bgc);
+    padding: 1.5rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     gap: 4rem;
 }
 
-header h1 {
-    font-size: 2.5em;
+header ul {
+    display: flex;
+    gap: 1.5rem;
 }
 
-header input {
-    background-color: transparent;
-    flex: 1;
-    padding: 0.4em;
-    border-radius: 5px;
-    border: 1px solid gray;
-    outline: none;
+header ul li {
+    list-style: none;
+    color: gray;
+}
+
+a {
+    text-decoration: none;
+    color: gray;
 }
 
 main {
-    padding: 2rem;
     display: grid;
-    gap: 3rem;
+    gap: 5rem;
+    margin-top: 11%;
 }
 
-#main-info {
+#main-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.main-info {
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+}
+
+.main-info h1 {
+    color: hsl(212, 50%, 35%);
+    font-size: 2.5em;
+}
+
+.label-container {
     display: grid;
     gap: 0.5rem;
 }
 
-.main-city {
-    font-size: 2.2em;
+.label-container label {
+    font-size: 1em;
+    color: gray;
 }
 
-.main-temperature {
-    margin-top: 1%;
-    font-weight: bold;
-    font-size: 3em;
+.label-container input {
+    padding: 0.8rem;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 5px;
+    outline: none;
+}
+
+.link-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.link-container a {
+    text-decoration: none;
+    color: hsl(0, 0%, 71%);
+}
+
+.link-container a:hover {
+    text-decoration: underline;
 }
 
 #today-forecast {
-    background-color: var(--secondary-bgc);
-    padding: 2rem;
+    flex: 0.5;
     display: grid;
     gap: 1rem;
+}
+
+.section-header {
+    color: hsl(212, 30%, 50%);
+    font-weight: bold;
 }
 
 .forecast-container {
     width: 100%;
     border-radius: 5px;
     display: flex;
-    gap: 1rem;
+    gap: 0.7rem;
 }
 
 .forecast-item {
+    background-color: var(--primary-bgc);
+    box-shadow: -1px 1px 3px hsl(0, 0%, 65%);
     flex: 1;
-    background-color: var(--terciary-bgc);
+    padding: 1.3rem;
     display: grid;
     gap: 1rem;
     place-items: center;
-    padding: 1rem;
     border-radius: 5px;
 }
 
@@ -113,42 +148,42 @@ main {
 }
 
 #air-info {
-    background-color: var(--secondary-bgc);
-    padding: 2rem;
     display: grid;
-    gap: 1rem;
+    gap: 1.8rem;
 }
 
 .air-info-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    gap: 0.7rem;
 }
 
 .air-info-item {
-    background-color: var(--terciary-bgc);
-    padding: 1rem;
+    background-color: var(--primary-bgc);
+    box-shadow: -1px 1px 3px hsl(0, 0%, 65%);
+    padding: 1.4rem;
     border-radius: 5px;
 }
 
-aside {
-    height: fit-content;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+#week-forecast {
+    display: grid;
+    gap: 1.8rem;
+    place-items: center;
 }
 
-.week-forecast {
+.week-forecast-container {
     display: grid;
     gap: 0.5rem;
 }
 
 .week-item {
-    background-color: var(--terciary-bgc);
+    width: 60vw;
+    background-color: var(--primary-bgc);
+    box-shadow: -1px 1px 3px hsl(0, 0%, 65%);
     padding: 1rem;
     border-radius: 5px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     gap: 2rem;
 }
