@@ -1,148 +1,100 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Início</title>
         <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/theme.css" />
         <link rel="stylesheet" href="css/home.css" />
     </head>
     <body>
-        <header>
-            <h1>BrasilWeather</h1>
-            <ul>
-                <li><a href="">Início</a></li>
-                <li><a href="">Histórico de pesquisas</a></li>
-                <li><a href="">Localidades populares</a></li>
-            </ul>
-            <!-- <h3>24.09.2024</h3> -->
-        </header>
-        <main>
-            <section id="main-section">
-                <div class="main-info">
-                    <h1>São Paulo, 23°c</h1>
-                    <form action="">
-                        <p class="label-container">
-                            <label for="local">Pesquisar localidade:</label>
-                            <input
-                                type="text"
-                                name="local"
-                                id="local"
-                                placeholder="localidade:"
-                            />
-                        </p>
-                    </form>
-                    <div class="link-container">
-                        <a href="">- previsão da semana</a>
-                        <a href="">- histórico de pesquisas</a>
+        <section id="side-container">
+            <div class="main-card">
+                <p>Agora</p>
+                <div class="temperature">
+                    <h1>5°c</h1>
+                    <img
+                        src="assets/nublado.png"
+                        class="temperature-img"
+                        alt=""
+                    />
+                </div>
+                <p>Nublado</p>
+                <hr />
+                <div class="info">
+                    <div class="info-container">
+                        <img src="assets/calendario.png" alt="" />
+                        <p>Quinta feira, 22 de maio</p>
+                    </div>
+                    <div class="info-container">
+                        <img src="assets/pin-de-localizacao.png" alt="" />
+                        <p>São Paulo, SP</p>
                     </div>
                 </div>
-                <div id="today-forecast">
-                    <p class="section-header">Previsão de hoje:</p>
-                    <div class="forecast-container">
-                        <div class="forecast-item">
-                            <p class="hour">12:00</p>
-                            <img src="assets/nublado.png" alt="" />
-                            <p class="hour-temperature">28°c</p>
-                        </div>
-                        <div class="forecast-item">
-                            <p class="hour">12:00</p>
-                            <img src="assets/nublado.png" alt="" />
-                            <p class="hour-temperature">28°c</p>
-                        </div>
-                        <div class="forecast-item">
-                            <p class="hour">12:00</p>
-                            <img src="assets/nublado.png" alt="" />
-                            <p class="hour-temperature">28°c</p>
-                        </div>
-                        <div class="forecast-item">
-                            <p class="hour">12:00</p>
-                            <img src="assets/nublado.png" alt="" />
-                            <p class="hour-temperature">28°c</p>
-                        </div>
-                        <div class="forecast-item">
-                            <p class="hour">12:00</p>
-                            <img src="assets/nublado.png" alt="" />
-                            <p class="hour-temperature">28°c</p>
-                        </div>
-                        <div class="forecast-item">
-                            <p class="hour">12:00</p>
-                            <img src="assets/nublado.png" alt="" />
-                            <p class="hour-temperature">28°c</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            </div>
 
-            <section id="air-info">
-                <h1 class="section-header">Condições do ar</h1>
-                <div class="air-info-container">
-                    <div class="air-info-item">
-                        <p>Sensação de temperatura</p>
-                        <h1>30°</h1>
-                    </div>
-                    <div class="air-info-item">
-                        <p>Sensação de temperatura</p>
-                        <h1>30°</h1>
-                    </div>
-                    <div class="air-info-item">
-                        <p>Sensação de temperatura</p>
-                        <h1>30°</h1>
-                    </div>
-                    <div class="air-info-item">
-                        <p>Sensação de temperatura</p>
-                        <h1>30°</h1>
-                    </div>
-                </div>
-            </section>
-
-            <section id="week-forecast">
-                <h1 class="section-header">Previsão da semana</h1>
+            <section class="week-forecast">
+                <p class="week-forecast-header">Previsão de 5 dias:</p>
                 <div class="week-forecast-container">
                     <div class="week-item">
-                        <p>Hoje</p>
-                        <img src="assets/nublado.png" alt="" />
-                        <p>Ensolarado</p>
-                        <p>25°c/32°c</p>
+                        <div class="weather">
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">7°c</p>
+                        </div>
+                        <p>2 de março</p>
+                        <p>Segunda-feira</p>
                     </div>
                     <div class="week-item">
-                        <p>Hoje</p>
-                        <img src="assets/nublado.png" alt="" />
-                        <p>Ensolarado</p>
-                        <p>25°c/32°c</p>
+                        <div class="weather">
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">7°c</p>
+                        </div>
+                        <p>2 de março</p>
+                        <p>Segunda-feira</p>
                     </div>
                     <div class="week-item">
-                        <p>Hoje</p>
-                        <img src="assets/nublado.png" alt="" />
-                        <p>Ensolarado</p>
-                        <p>25°c/32°c</p>
+                        <div class="weather">
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">7°c</p>
+                        </div>
+                        <p>2 de março</p>
+                        <p>Segunda-feira</p>
                     </div>
                     <div class="week-item">
-                        <p>Hoje</p>
-                        <img src="assets/nublado.png" alt="" />
-                        <p>Ensolarado</p>
-                        <p>25°c/32°c</p>
+                        <div class="weather">
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">7°c</p>
+                        </div>
+                        <p>2 de março</p>
+                        <p>Segunda-feira</p>
                     </div>
                     <div class="week-item">
-                        <p>Hoje</p>
-                        <img src="assets/nublado.png" alt="" />
-                        <p>Ensolarado</p>
-                        <p>25°c/32°c</p>
+                        <div class="weather">
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">7°c</p>
+                        </div>
+                        <p>2 de março</p>
+                        <p>Segunda-feira</p>
                     </div>
                     <div class="week-item">
-                        <p>Hoje</p>
-                        <img src="assets/nublado.png" alt="" />
-                        <p>Ensolarado</p>
-                        <p>25°c/32°c</p>
+                        <div class="weather">
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">7°c</p>
+                        </div>
+                        <p>2 de março</p>
+                        <p>Segunda-feira</p>
                     </div>
                     <div class="week-item">
-                        <p>Hoje</p>
-                        <img src="assets/nublado.png" alt="" />
-                        <p>Ensolarado</p>
-                        <p>25°c/32°c</p>
+                        <div class="weather">
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">7°c</p>
+                        </div>
+                        <p>2 de março</p>
+                        <p>Segunda-feira</p>
                     </div>
                 </div>
             </section>
-        </main>
+        </section>
     </body>
 </html>
