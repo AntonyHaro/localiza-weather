@@ -41,7 +41,7 @@
                 </div>
 
                 <section class="week-forecast">
-                    <p class="week-forecast-header">Previsão de 5 dias:</p>
+                    <p class="week-forecast-header">Previsão de 5 dias</p>
                     <div class="week-forecast-container">
                         <div class="week-item">
                             <div class="weather">
@@ -104,32 +104,82 @@
             </section>
 
             <section id="main-forecast">
+                <section id="current-location">
+                    <div class="location">
+                        <h1 class="city">São Paulo, SP</h1>
+                        <p class="date">Quinta feira, 22 de maio</p>
+                        <p id="city-description">
+                            São Paulo é uma metrópole vibrante e multicultural,
+                            conhecida por sua intensa vida urbana, arquitetura
+                            icônica e uma rica cena cultural. É o coração
+                            financeiro do Brasil, repleta de museus, teatros,
+                            parques e gastronomia diversificada. A cidade é um
+                            centro de inovação e criatividade, atraindo
+                            visitantes de todo o mundo.
+                        </p>
+                    </div>
+                    <form>
+                        <p class="label-container">
+                            <label for="location"
+                                >Deseja pesquisar outra localidade?</label
+                            >
+                            <span>
+                                <input
+                                    type="text"
+                                    name="location"
+                                    id="location"
+                                    placeholder="pesquisar outra localidade:"
+                                /><button type="submit">Pesquisar</button></span
+                            >
+                        </p>
+                    </form>
+                </section>
                 <section id="todays-highlights">
                     <h2>Destaques de hoje</h2>
                     <div class="info-container">
                         <div class="info-item sunrise-sunset">
+                            <!-- <h2>Amanhecer e Anoitecer</h2> -->
                             <div class="sunrise">
-                                <p>Nascer do Sol</p>
-                                <h1>6:12</h1>
+                                <img src="assets/sunrise.png" alt="" />
+                                <span>
+                                    <p>Nascer do Sol</p>
+                                    <h1>6:12</h1></span
+                                >
                             </div>
                             <div class="sunset">
-                                <p>Por do Sol</p>
-                                <h1>18:02</h1>
+                                <img src="assets/sunset.png" alt="" />
+                                <span>
+                                    <p>Por do Sol</p>
+                                    <h1>18:02</h1></span
+                                >
                             </div>
                         </div>
                         <div class="info-item">
-                            <p>Humidade</p>
-                            <h2>81%</h2>
+                            <img src="assets/humidity.png" alt="" />
+                            <span>
+                                <p>Humidade</p>
+                                <h2>81%</h2></span
+                            >
                         </div>
                         <div class="info-item">
-                            <p>Pressão</p>
-                            <h2>1025hPa</h2>
+                            <img src="assets/pressure.png" alt="" />
+                            <span>
+                                <p>Pressão</p>
+                                <h2>1025hPa</h2></span
+                            >
                         </div>
                         <div class="info-item">
-                            <p>Sensação de temperatura</p>
-                            <h2>25°</h2>
+                            <img src="assets/temperature.png" alt="" />
+                            <span>
+                                <p>Sensação de temperatura</p>
+                                <h2>25°</h2></span
+                            >
                         </div>
                     </div>
+                </section>
+                <section id="todays-forecast">
+                    <h1>Previsão de hoje</h1>
+                    <div class="todats-foreast-container"></div>
                 </section>
             </section>
         </main>
