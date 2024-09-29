@@ -17,7 +17,8 @@ body {
 
 main {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    gap: 2rem;
 }
 
 #side-container {
@@ -110,4 +111,35 @@ hr {
 
 .week-item img {
     height: 24px;
+}
+
+#main-forecast {
+    flex: 1;
+}
+
+#todays-highlights {
+    background-color: var(--primary-bgc);
+    padding: 1.5rem;
+    border-radius: 5px;
+    display: grid;
+    gap: 1rem;
+}
+
+#todays-highlights .info-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+#todays-highlights .info-item {
+    background-color: var(--terciary-bgc);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+#todays-highlights .sunrise-sunset {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
