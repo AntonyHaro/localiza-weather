@@ -22,8 +22,9 @@ main {
 }
 
 #side-container {
-    width: 23vw;
-    display: grid;
+    /* width: 23vw; */
+    display: flex;
+    flex-direction: column;
     gap: 3rem;
 }
 
@@ -81,7 +82,7 @@ hr {
 
 .week-forecast-container {
     display: grid;
-    gap: 0.5rem;
+    gap: 0.7rem;
 }
 
 .week-item {
@@ -119,6 +120,16 @@ hr {
     gap: 3rem;
 }
 
+.container-test  {
+    display: grid;
+    gap: 2rem;
+}
+
+.section-header {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
 #current-location .location {
     display: grid;
     gap: 0.5em;
@@ -145,11 +156,6 @@ hr {
     color: rgb(179, 179, 179);
 }
 
-/* #current-location form {
-    display: grid;
-    gap: 1rem;
-} */
-
 #current-location form .label-container {
     display: grid;
     gap: 0.5rem;
@@ -159,17 +165,16 @@ hr {
 
 #current-location form span {
     display: flex;
-    gap: 0.7rem;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 #current-location form input {
     width: 50%;
-    /* background-color: var(--primary-bgc);
-    border: 1px solid gray; */
     background-color: transparent;
-    border: 1px solid gray;
+    border: 0;
+    border-bottom: 1px solid gray;
     padding: 0.5rem;
-    border-radius: 3px;
     outline: none;
 }
 
@@ -208,7 +213,7 @@ hr {
 }
 
 #todays-highlights .info-item img {
-    height: 60px;
+    height: 45px;
 }
 
 #todays-highlights .info-item p {
@@ -218,15 +223,61 @@ hr {
 
 .sunrise-sunset {
     grid-column: 1 / -1;
+    display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sunrise-sunset img {
+    height: 70px;
 }
 
 .sunrise-sunset h1 {
-    font-size: 2em;
+    font-size: 2.2em;
 }
 
 .sunrise,
 .sunset {
+    background-color: var(--primary-bgc);
+    flex: 1;
+    padding: 1.7rem;
+    border-radius: 8px;
     display: flex;
-    gap: 2rem;
+    justify-content: space-evenly;
+    /* justify-content: space-between; */
+    /* gap: 4rem; */
+}
+
+#todays-forecast {
+    display: grid;
+    gap: 1rem;
+}
+
+.todays-forecast-container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 1rem;
+}
+
+.todays-forecast-container .item {
+    background-color: var(--primary-bgc);
+    padding: 2rem;
+    border-radius: 5px;
+    display: grid;
+    gap: 1.2rem;
+    place-items: center;
+}
+
+.todays-forecast-container .item .hour {
+    color: gray;
+}
+
+.todays-forecast-container .item img {
+    height: 60px;
+}
+
+.todays-forecast-container .item .temperature {
+    font-weight: bold;
+    font-size: 1.3em;
 }

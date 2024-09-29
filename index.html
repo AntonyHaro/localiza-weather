@@ -104,82 +104,168 @@
             </section>
 
             <section id="main-forecast">
-                <section id="current-location">
-                    <div class="location">
-                        <h1 class="city">São Paulo, SP</h1>
-                        <p class="date">Quinta feira, 22 de maio</p>
-                        <p id="city-description">
-                            São Paulo é uma metrópole vibrante e multicultural,
-                            conhecida por sua intensa vida urbana, arquitetura
-                            icônica e uma rica cena cultural. É o coração
-                            financeiro do Brasil, repleta de museus, teatros,
-                            parques e gastronomia diversificada. A cidade é um
-                            centro de inovação e criatividade, atraindo
-                            visitantes de todo o mundo.
-                        </p>
-                    </div>
-                    <form>
-                        <p class="label-container">
-                            <label for="location"
-                                >Deseja pesquisar outra localidade?</label
-                            >
-                            <span>
-                                <input
-                                    type="text"
-                                    name="location"
-                                    id="location"
-                                    placeholder="pesquisar outra localidade:"
-                                /><button type="submit">Pesquisar</button></span
-                            >
-                        </p>
-                    </form>
-                </section>
-                <section id="todays-highlights">
-                    <h2>Destaques de hoje</h2>
-                    <div class="info-container">
-                        <div class="info-item sunrise-sunset">
-                            <!-- <h2>Amanhecer e Anoitecer</h2> -->
-                            <div class="sunrise">
-                                <img src="assets/sunrise.png" alt="" />
+                <div class="container-test">
+                    <section id="current-location">
+                        <div class="location">
+                            <h1 class="city">São Paulo, SP</h1>
+                            <p class="date">Quinta feira, 22 de maio</p>
+                            <p id="city-description">
+                                São Paulo é uma metrópole vibrante e
+                                multicultural, conhecida por sua intensa vida
+                                urbana, arquitetura icônica e uma rica cena
+                                cultural. É o coração financeiro do Brasil,
+                                repleta de museus, teatros, parques e
+                                gastronomia diversificada. A cidade é um centro
+                                de inovação e criatividade, atraindo visitantes
+                                de todo o mundo.
+                            </p>
+                        </div>
+                        <form>
+                            <p class="label-container">
+                                <label for="location"
+                                    >Deseja pesquisar outra localidade?</label
+                                >
                                 <span>
-                                    <p>Nascer do Sol</p>
-                                    <h1>6:12</h1></span
+                                    <input
+                                        type="text"
+                                        name="location"
+                                        id="location"
+                                        placeholder="pesquisar outra localidade:"
+                                    /><button type="submit">
+                                        Pesquisar
+                                    </button></span
+                                >
+                            </p>
+                        </form>
+                    </section>
+                    <section id="todays-highlights">
+                        <h1 class="section-header">Destaques de hoje</h1>
+                        <div class="info-container">
+                            <div class="sunrise-sunset">
+                                <!-- <h2>Amanhecer e Anoitecer</h2> -->
+                                <div class="sunrise">
+                                    <img src="assets/sunrise.png" alt="" />
+                                    <span>
+                                        <p>Amanhecer</p>
+                                        <h1>6:12</h1></span
+                                    >
+                                </div>
+                                <div class="sunset">
+                                    <img src="assets/sunset.png" alt="" />
+                                    <span>
+                                        <p>Anoitecer</p>
+                                        <h1>18:02</h1></span
+                                    >
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <img src="assets/humidity.png" alt="" />
+                                <span>
+                                    <p>Humidade</p>
+                                    <h2>81%</h2></span
                                 >
                             </div>
-                            <div class="sunset">
-                                <img src="assets/sunset.png" alt="" />
+                            <div class="info-item">
+                                <img src="assets/pressure.png" alt="" />
                                 <span>
-                                    <p>Por do Sol</p>
-                                    <h1>18:02</h1></span
+                                    <p>Pressão</p>
+                                    <h2>1025hPa</h2></span
+                                >
+                            </div>
+                            <div class="info-item">
+                                <img src="assets/temperature.png" alt="" />
+                                <span>
+                                    <p>Sensação de temperatura</p>
+                                    <h2>25°</h2></span
                                 >
                             </div>
                         </div>
-                        <div class="info-item">
-                            <img src="assets/humidity.png" alt="" />
-                            <span>
-                                <p>Humidade</p>
-                                <h2>81%</h2></span
-                            >
-                        </div>
-                        <div class="info-item">
-                            <img src="assets/pressure.png" alt="" />
-                            <span>
-                                <p>Pressão</p>
-                                <h2>1025hPa</h2></span
-                            >
-                        </div>
-                        <div class="info-item">
-                            <img src="assets/temperature.png" alt="" />
-                            <span>
-                                <p>Sensação de temperatura</p>
-                                <h2>25°</h2></span
-                            >
-                        </div>
-                    </div>
-                </section>
+                    </section>
+                </div>
                 <section id="todays-forecast">
-                    <h1>Previsão de hoje</h1>
-                    <div class="todats-foreast-container"></div>
+                    <h1 class="section-header">Previsão de hoje</h1>
+                    <div class="todays-forecast-container">
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                    </div>
                 </section>
             </section>
         </main>
