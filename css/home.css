@@ -11,159 +11,85 @@ body {
     min-height: 100vh;
     display: grid;
     gap: 3rem;
-    padding: 3rem;
+    padding: 5rem 5rem;
     padding-bottom: 6rem;
     font-size: 14px;
 }
 
 main {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
     gap: 4rem;
 }
 
-#side-container {
-    flex: 0.2;
+#main-info {
     display: flex;
-    flex-direction: column;
-    gap: 3rem;
+    gap: 1.2rem;
 }
 
-.main-card {
+#main-info .card {
+    background-color: var(--primary-bgc);
+    box-shadow: -1px 1px 5px hsla(0, 0%, 0%, 0.5);
+    width: 50%;
+    padding: 2rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 0.7rem;
+    background-image: url("https://i.pinimg.com/originals/84/41/3b/84413b084032a95c7705b5eaeb4ce3b7.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#main-info .location-info {
     box-shadow: -1px 1px 5px hsla(0, 0%, 0%, 0.5);
     background-color: var(--primary-bgc);
-    padding: 1.5rem;
+    padding: 2rem;
     border-radius: 5px;
     display: grid;
-    gap: 1rem;
+    gap: 2rem;
 }
 
-.main-card .temperature {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.main-card h1 {
-    font-size: 3.5em;
-    color: hsl(212, 5%, 80%);
-    text-shadow: -2px 2px 2px hsla(0, 0%, 0%, 0.5);
-}
-
-.main-card .temperature-img {
-    height: 70px;
-}
-
-hr {
-    height: 1px;
-    border: 0;
-    background-color: var(--secondary-bgc);
-}
-
-.main-card .info {
-    display: grid;
-    gap: 0.4rem;
-    font-size: 0.9em;
-    color: hsl(0, 0%, 63%);
-}
-
-.week-forecast {
+.location-info .location {
     display: grid;
     gap: 1rem;
 }
 
-.week-forecast-header {
-    color: hsl(212, 40%, 85%);
-    font-weight: bold;
-}
-
-.week-forecast-container {
-    display: grid;
-    gap: 0.7rem;
-}
-
-.week-item {
-    background-color: var(--primary-bgc);
-    box-shadow: -1px 1px 5px hsla(0, 0%, 0%, 0.5);
-    padding: 0.9rem;
-    border-radius: 0 5px 5px 0;
-    border-left: 0.5rem solid hsl(212, 10%, 28%);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.9em;
-    color: gray;
-}
-
-.week-item .weather {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-right: 10%;
-}
-
-.week-item .weather .temperature {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: var(--text-color);
-}
-
-.week-item img {
-    height: 24px;
-}
-
-#main-forecast {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-}
-
-.section-header {
-    font-size: 1.2em;
-    color: hsl(207, 40%, 73%);
-    font-weight: bold;
-}
-
-#current-location .location {
-    display: grid;
-    gap: 0.5em;
-}
-
-.location .date {
-    color: gray;
+.location-info .date {
+    color: rgb(199, 199, 199);
     font-size: 0.9em;
     font-weight: bold;
     margin-bottom: 0.7rem;
 }
 
-.location #city-description {
+.location-info #city-description {
     width: 100%;
     margin-bottom: 1.5rem;
 }
 
-#current-location .city {
+#main-info .city {
     font-size: 2.2em;
 }
 
-#current-location #current-temperature {
+#main-info #current-temperature {
     font-size: 1.5em;
     color: rgb(179, 179, 179);
 }
 
-#current-location form .label-container {
+#main-info form .label-container {
     display: grid;
     gap: 0.5rem;
     font-weight: bold;
 }
 
-#current-location form span {
+#main-info form span {
     display: flex;
     align-items: center;
     gap: 1.5rem;
 }
 
-#current-location form input {
+#main-info form input {
     width: 50%;
     background-color: transparent;
     border: 0;
@@ -173,7 +99,7 @@ hr {
     color: var(--text-color);
 }
 
-#current-location form button {
+#main-info form button {
     background-color: var(--primary-bgc);
     color: var(--text-color);
     border: 1px solid hsl(0, 0%, 38%);
@@ -195,7 +121,6 @@ hr {
 }
 
 #todays-highlights .info-item {
-    /* background-color: var(--primary-bgc); */
     border: 3px solid var(--secondary-bgc);
     padding: 1.7rem;
     border-radius: 8px;
@@ -238,8 +163,6 @@ hr {
     border-radius: 8px;
     display: flex;
     justify-content: space-evenly;
-    /* justify-content: space-between; */
-    /* gap: 4rem; */
 }
 
 #todays-forecast {
@@ -274,4 +197,44 @@ hr {
 .todays-forecast-container .item .temperature {
     font-weight: bold;
     font-size: 1.3em;
+}
+
+.week-forecast {
+    display: grid;
+    gap: 1rem;
+}
+
+.week-forecast-container {
+    display: grid;
+    gap: 0.7rem;
+}
+
+.week-item {
+    background-color: var(--primary-bgc);
+    box-shadow: -1px 1px 5px hsla(0, 0%, 0%, 0.5);
+    padding: 0.9rem;
+    border-radius: 0 5px 5px 0;
+    border-left: 0.5rem solid hsl(212, 10%, 28%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+    color: gray;
+}
+
+.week-item .weather {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-right: 10%;
+}
+
+.week-item .weather .temperature {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.week-item img {
+    height: 24px;
 }
