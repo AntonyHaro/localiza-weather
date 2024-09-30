@@ -129,14 +129,13 @@ main {
 }
 
 #todays-highlights {
-    /* width: 50%; */
     display: grid;
     gap: 1rem;
 }
 
 #todays-highlights .info-wrapper {
     display: flex;
-    gap: 1.5rem;
+    gap: 3rem;
 }
 
 #todays-highlights .info-container {
@@ -147,13 +146,14 @@ main {
 
 #todays-highlights .info-item {
     flex: 1;
+    height: 100%;
     background-color: var(--secondary-bgc);
     box-shadow: -1px 1px 5px hsla(0, 0%, 0%, 0.5);
-    padding: 1.7rem;
+    padding: 3rem;
     border-radius: 8px;
     display: flex;
+    align-items: flex-end;
     gap: 2rem;
-    align-items: center;
 }
 
 #todays-highlights .info-item img {
@@ -179,6 +179,42 @@ main {
 
 .sunrise-sunset h1 {
     font-size: 2.2em;
+}
+
+.week-forecast-container {
+    width: 100%;
+    display: grid;
+    gap: 0.4rem;
+}
+
+.week-item {
+    background-color: var(--primary-bgc);
+    box-shadow: -1px 1px 5px hsla(0, 0%, 0%, 0.5);
+    padding: 0.9rem;
+    border-radius: 0 5px 5px 0;
+    border-left: 0.5rem solid hsl(212, 10%, 28%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+    color: gray;
+}
+
+.week-item .weather {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-right: 10%;
+}
+
+.week-item .weather .temperature {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.week-item img {
+    height: 24px;
 }
 
 #todays-forecast {
@@ -213,44 +249,4 @@ main {
 .todays-forecast-container .item .temperature {
     font-weight: bold;
     font-size: 1.3em;
-}
-
-.week-forecast {
-    display: grid;
-    gap: 1rem;
-}
-
-.week-forecast-container {
-    display: grid;
-    gap: 0.7rem;
-}
-
-.week-item {
-    background-color: var(--primary-bgc);
-    box-shadow: -1px 1px 5px hsla(0, 0%, 0%, 0.5);
-    padding: 0.9rem;
-    border-radius: 0 5px 5px 0;
-    border-left: 0.5rem solid hsl(212, 10%, 28%);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.9em;
-    color: gray;
-}
-
-.week-item .weather {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-right: 10%;
-}
-
-.week-item .weather .temperature {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: var(--text-color);
-}
-
-.week-item img {
-    height: 24px;
 }
