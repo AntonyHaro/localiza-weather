@@ -14,7 +14,10 @@
                 <div class="card">
                     <h1>5°c</h1>
                     <p>Nublado</p>
-                    <p>26/13</p>
+                    <p class="temperature">
+                        <span class="max-temperature">26°c</span> /
+                        <span class="min-temperature">2°c</span>
+                    </p>
                 </div>
                 <div class="location-info">
                     <div class="location">
@@ -49,44 +52,85 @@
             </section>
             <section id="todays-highlights">
                 <h1 class="section-header">Destaques de hoje</h1>
-                <div class="info-container">
-                    <div class="sunrise-sunset">
-                        <!-- <h2>Amanhecer e Anoitecer</h2> -->
-                        <div class="sunrise">
-                            <img src="assets/sunrise.png" alt="" />
+                <div class="info-wrapper">
+                    <div class="info-container">
+                        <div class="sunrise-sunset">
+                            <div class="info-item">
+                                <img src="assets/sunrise.png" alt="" />
+                                <span>
+                                    <p>Amanhecer</p>
+                                    <h1>6:12</h1></span
+                                >
+                            </div>
+                            <div class="info-item">
+                                <img src="assets/sunset.png" alt="" />
+                                <span>
+                                    <p>Anoitecer</p>
+                                    <h1>18:02</h1></span
+                                >
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <img src="assets/humidity.png" alt="" />
                             <span>
-                                <p>Amanhecer</p>
-                                <h1>6:12</h1></span
+                                <p>Humidade</p>
+                                <h2>81%</h2></span
                             >
                         </div>
-                        <div class="sunset">
-                            <img src="assets/sunset.png" alt="" />
+                        <div class="info-item">
+                            <img src="assets/pressure.png" alt="" />
                             <span>
-                                <p>Anoitecer</p>
-                                <h1>18:02</h1></span
+                                <p>Pressão</p>
+                                <h2>1025hPa</h2></span
+                            >
+                        </div>
+                        <div class="info-item">
+                            <img src="assets/temperature.png" alt="" />
+                            <span>
+                                <p>Sensação de temperatura</p>
+                                <h2>25°</h2></span
                             >
                         </div>
                     </div>
-                    <div class="info-item">
-                        <img src="assets/humidity.png" alt="" />
-                        <span>
-                            <p>Humidade</p>
-                            <h2>81%</h2></span
-                        >
-                    </div>
-                    <div class="info-item">
-                        <img src="assets/pressure.png" alt="" />
-                        <span>
-                            <p>Pressão</p>
-                            <h2>1025hPa</h2></span
-                        >
-                    </div>
-                    <div class="info-item">
-                        <img src="assets/temperature.png" alt="" />
-                        <span>
-                            <p>Sensação de temperatura</p>
-                            <h2>25°</h2></span
-                        >
+                    <div class="info-container">
+                        <div class="sunrise-sunset">
+                            <!-- <h2>Amanhecer e Anoitecer</h2> -->
+                            <div class="info-item">
+                                <img src="assets/sunrise.png" alt="" />
+                                <span>
+                                    <p>Amanhecer</p>
+                                    <h1>6:12</h1></span
+                                >
+                            </div>
+                            <div class="info-item">
+                                <img src="assets/sunset.png" alt="" />
+                                <span>
+                                    <p>Anoitecer</p>
+                                    <h1>18:02</h1></span
+                                >
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <img src="assets/humidity.png" alt="" />
+                            <span>
+                                <p>Humidade</p>
+                                <h2>81%</h2></span
+                            >
+                        </div>
+                        <div class="info-item">
+                            <img src="assets/pressure.png" alt="" />
+                            <span>
+                                <p>Pressão</p>
+                                <h2>1025hPa</h2></span
+                            >
+                        </div>
+                        <div class="info-item">
+                            <img src="assets/temperature.png" alt="" />
+                            <span>
+                                <p>Sensação de temperatura</p>
+                                <h2>25°</h2></span
+                            >
+                        </div>
                     </div>
                 </div>
             </section>

@@ -28,6 +28,10 @@ main {
 
 #main-info .card {
     background-color: var(--primary-bgc);
+    background-image: url("https://i.pinimg.com/originals/84/41/3b/84413b084032a95c7705b5eaeb4ce3b7.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     box-shadow: -1px 1px 5px hsla(0, 0%, 0%, 0.5);
     width: 50%;
     padding: 2rem;
@@ -36,10 +40,25 @@ main {
     flex-direction: column;
     justify-content: flex-end;
     gap: 0.7rem;
-    background-image: url("https://i.pinimg.com/originals/84/41/3b/84413b084032a95c7705b5eaeb4ce3b7.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+}
+
+.card h1 {
+    font-size: 3.5em;
+    text-shadow: -1px 1px 5px hsla(0, 0%, 0%, 0.5);
+}
+
+.card .temperature {
+    font-size: 2em;
+}
+
+.card .max-temperature {
+    font-weight: bold;
+    color: hsl(0, 76%, 39%);
+}
+
+.card .min-temperature {
+    font-weight: bold;
+    color: hsl(219, 100%, 85%);
 }
 
 #main-info .location-info {
@@ -110,8 +129,14 @@ main {
 }
 
 #todays-highlights {
+    /* width: 50%; */
     display: grid;
     gap: 1rem;
+}
+
+#todays-highlights .info-wrapper {
+    display: flex;
+    gap: 1.5rem;
 }
 
 #todays-highlights .info-container {
@@ -121,7 +146,9 @@ main {
 }
 
 #todays-highlights .info-item {
-    border: 3px solid var(--secondary-bgc);
+    flex: 1;
+    background-color: var(--secondary-bgc);
+    box-shadow: -1px 1px 5px hsla(0, 0%, 0%, 0.5);
     padding: 1.7rem;
     border-radius: 8px;
     display: flex;
@@ -152,17 +179,6 @@ main {
 
 .sunrise-sunset h1 {
     font-size: 2.2em;
-}
-
-.sunrise,
-.sunset {
-    background-color: var(--secondary-bgc);
-    box-shadow: -1px 1px 5px hsla(0, 0%, 0%, 0.5);
-    flex: 1;
-    padding: 1.7rem;
-    border-radius: 8px;
-    display: flex;
-    justify-content: space-evenly;
 }
 
 #todays-forecast {
