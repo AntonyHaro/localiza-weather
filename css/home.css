@@ -147,13 +147,23 @@ main {
 #todays-highlights .info-item {
     flex: 1;
     height: 100%;
-    background-color: var(--secondary-bgc);
+    background: radial-gradient(
+        circle at 0% 100%,
+        var(--secondary-bgc) 70%,
+        transparent 30%
+    );
     box-shadow: -1px 1px 5px hsla(0, 0%, 0%, 0.5);
     padding: 3rem;
     border-radius: 8px;
     display: flex;
     align-items: flex-end;
     gap: 2rem;
+    transition: 0.2s transform, 0.5s ease-out background-color;
+}
+
+#todays-highlights .info-item:hover {
+    background-color: var(--primary-bgc);
+    transform: translateY(-7px);
 }
 
 #todays-highlights .info-item img {
@@ -198,6 +208,13 @@ main {
     align-items: center;
     font-size: 0.9em;
     color: gray;
+    transition: 0.2s;
+}
+
+.week-item:hover {
+    transform: translateX(10px);
+    border-color: hsl(212, 40%, 50%);
+    /* border-left: 0.5rem solid hsl(212, 10%, 28%); */
 }
 
 .week-item .weather {
@@ -224,7 +241,13 @@ main {
 
 .todays-forecast-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    /* grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); */
+    gap: 1rem;
+}
+
+.line-container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
     gap: 1rem;
 }
 
@@ -236,6 +259,11 @@ main {
     display: grid;
     gap: 1.2rem;
     place-items: center;
+    transition: 0.2s;
+}
+
+.todays-forecast-container .item:hover {
+    transform: translateY(-10px);
 }
 
 .todays-forecast-container .item .hour {
@@ -249,4 +277,51 @@ main {
 .todays-forecast-container .item .temperature {
     font-weight: bold;
     font-size: 1.3em;
+}
+
+.carousel {
+    position: relative;
+    width: 50vw;
+    overflow: hidden;
+    border: 5px solid gray;
+    border-radius: 10px;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 50vh;
+    transition: opacity 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
 }
