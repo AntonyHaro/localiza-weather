@@ -27,7 +27,7 @@ main {
 }
 
 #main-info .card {
-    background-color: var(--primary-bgc);
+    /* background-color: var(--primary-bgc); */
     background-image: url("https://i.pinimg.com/originals/84/41/3b/84413b084032a95c7705b5eaeb4ce3b7.jpg");
     background-size: cover;
     background-position: center;
@@ -152,18 +152,20 @@ main {
         var(--secondary-bgc) 70%,
         transparent 30%
     );
+    background-size: 90%;
+    background-repeat: no-repeat;
     box-shadow: -1px 1px 5px hsla(0, 0%, 0%, 0.5);
     padding: 3rem;
     border-radius: 8px;
     display: flex;
     align-items: flex-end;
     gap: 2rem;
-    transition: 0.2s transform, 0.5s ease-out background-color;
+    transition: 0.2s;
 }
 
 #todays-highlights .info-item:hover {
-    background-color: var(--primary-bgc);
     transform: translateY(-7px);
+    background-size: 105%;
 }
 
 #todays-highlights .info-item img {
