@@ -11,7 +11,7 @@
     </head>
     <body>
         <header>
-            <h1>🌧️BrasilWeather</h1>
+            <h1><img src="assets/logo.svg" alt="" /> BrasilWeather</h1>
             <input type="text" placeholder="pesquisar cidade" />
             <img
                 src="https://static-00.iconduck.com/assets.00/search-icon-2044x2048-psdrpqwp.png"
@@ -42,7 +42,7 @@
                             visitantes de todo o mundo.
                         </p>
                     </div>
-                    <form>
+                    <!-- <form>
                         <p class="label-container">
                             <label for="location"
                                 >Deseja pesquisar outra localidade? Experimente
@@ -57,12 +57,12 @@
                                 /><button type="submit">Pesquisar</button></span
                             >
                         </p>
-                    </form>
+                    </form> -->
                 </div>
             </section>
-            <section id="todays-highlights">
-                <h1 class="section-header">Destaques de hoje</h1>
-                <div class="info-wrapper">
+            <section class="dual-section">
+                <section id="todays-highlights">
+                    <h1 class="section-header">Destaques de hoje</h1>
                     <div class="info-container">
                         <div class="sunrise-sunset">
                             <div class="info-item">
@@ -102,7 +102,10 @@
                             >
                         </div>
                     </div>
+                </section>
 
+                <section id="week-forecast">
+                    <h1 class="section-header">Previsão da Semana</h1>
                     <div class="week-forecast-container">
                         <div class="week-item">
                             <div class="weather">
@@ -154,7 +157,7 @@
                             <p>2 de março</p>
                         </div>
                     </div>
-                </div>
+                </section>
             </section>
 
             <section id="todays-forecast">
