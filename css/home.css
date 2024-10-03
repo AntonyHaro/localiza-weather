@@ -194,8 +194,8 @@ main {
     padding: 3rem;
     border-radius: 8px;
     display: flex;
-    align-items: flex-end;
-    gap: 2rem;
+    align-items: center;
+    gap: 1rem;
     transition: 0.2s;
 }
 
@@ -204,7 +204,15 @@ main {
     background-size: 105%;
 }
 
-#todays-highlights .info-item img {
+#todays-highlights .info-item:hover img {
+    transition: 0.2s;
+}
+
+#todays-highlights .info-item:hover img{
+    transform: translateY(-3px);
+}
+
+.info-item-img {
     height: 45px;
 }
 
@@ -221,8 +229,8 @@ main {
     gap: 1rem;
 }
 
-.sunrise-sunset img {
-    height: 70px;
+.sunrise-sunset-img {
+    height: 120px;
 }
 
 .sunrise-sunset h1 {
