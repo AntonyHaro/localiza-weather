@@ -7,33 +7,16 @@ require("dotenv").config();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
+// test endpoint
 app.get("/test", (req, res) => {
     res.json({ message: "Hello from the server!" });
 });
 
-app.get("/cep/:cep", async (req, res) => {
-    const { cep } = req.params;
-    const url = `https://viacep.com.br/ws/${cep}/json/`;
-
-    try {
-        const response = await axios.get(url);
-        const data = response.data;
-
-        if (data.erro) {
-            return res.status(404).json({ error: "CEP não encontrado." });
-        }
-        res.json(data);
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({
-            error: "Erro ao buscar o CEP. Tente novamente mais tarde.",
-        });
-    }
-});
-
+// endpoint to generate the description from the param city using the openAI api
 app.post("/city/:city", async (req, res) => {
     const { city } = req.params;
     const url = "https://api.openai.com/v1/chat/completions";
+    const apiKey = process.env.OPENAI_API_KEY;
 
     try {
         const response = await axios.post(
@@ -44,7 +27,7 @@ app.post("/city/:city", async (req, res) => {
                     { role: "system", content: "Você é um assistente útil." },
                     {
                         role: "user",
-                        content: `Descreva a cidade ${city} em 50 palavras. Não minta.`,
+                        content: `Descreva a cidade ${city} em 70 palavras. Não minta.`,
                     },
                 ],
             },
@@ -55,8 +38,8 @@ app.post("/city/:city", async (req, res) => {
                 },
             }
         );
-        const data = response.choices[0].message.content;
-        res.json({ data });
+        const reply = response.data.choices[0].message.content;
+        res.json({ reply });
     } catch (error) {
         console.log("Erro na solicitação:", error);
         res.status(500).send("Erro ao processar a solicitação");
