@@ -10,10 +10,10 @@ body {
     color: var(--text-color);
     min-height: 100vh;
     display: grid;
-    gap: 6rem;
-    padding: 5rem 5rem;
+    gap: 5rem;
+    padding: 3rem;
     padding-bottom: 6rem;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 header {
@@ -21,13 +21,6 @@ header {
     justify-content: space-between;
     align-items: center;
     gap: 4rem;
-}
-
-header input {
-    flex: 1;
-    padding: 0.7rem;
-    border-radius: 5px;
-    border: 0;
 }
 
 header img {
@@ -40,6 +33,11 @@ header h1 {
     gap: 0.5rem;
 }
 
+header nav {
+    display: flex;
+    gap: 1rem;
+}
+
 header form {
     flex: 1;
     display: flex;
@@ -47,14 +45,21 @@ header form {
     gap: 1rem;
 }
 
+header form input {
+    flex: 1;
+    padding: 0.5rem;
+    border-radius: 3px;
+    border: 0;
+    outline: none;
+}
+
 header form button {
     background-color: transparent;
     border: 0;
 }
 
-header nav {
-    display: flex;
-    gap: 1rem;
+header form img {
+    height: 25px;
 }
 
 main {
@@ -73,7 +78,8 @@ main {
     background-position: center;
     background-repeat: no-repeat;
     box-shadow: -1px 1px 5px hsla(0, 0%, 0%, 0.5);
-    width: 50%;
+    width: 100%;
+    /* flex: 1; */
     padding: 2rem;
     border-radius: 5px;
     display: flex;
@@ -144,6 +150,7 @@ main {
     border-radius: 3px;
     display: grid;
     gap: 1.2rem;
+    align-items: center;
 }
 
 .cep-item .label {
@@ -161,7 +168,7 @@ main {
 }
 
 .section-header {
-    font-size: 1.4em;
+    font-size: 1.3em;
     text-shadow: -1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
