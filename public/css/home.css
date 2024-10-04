@@ -63,6 +63,7 @@ header form input {
 }
 
 header form button {
+    cursor: pointer;
     background-color: transparent;
     border: 0;
 }
