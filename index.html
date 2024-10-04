@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,11 +12,18 @@
     <body>
         <header>
             <h1><img src="assets/logo.svg" alt="" /> LocalizaWeather</h1>
-            <input type="text" placeholder="pesquisar cidade" />
-            <img
-                src="https://static-00.iconduck.com/assets.00/search-icon-2044x2048-psdrpqwp.png"
-                alt=""
-            />
+
+            <nav>
+                <p>Histórico de pesquisas</p>
+                <p>Localidades mais procuradas</p>
+            </nav>
+
+            <form action="">
+                <input type="text" placeholder="pesquisar cidade" />
+                <button type="submit">
+                    <img src="assets/search.svg" alt="" />
+                </button>
+            </form>
         </header>
         <main>
             <section id="main-info">
@@ -30,20 +37,59 @@
                 </div>
                 <div class="location-info">
                     <div class="location">
-                        <h1 class="city">📍 São Paulo, SP</h1>
+                        <h1 class="city">São Paulo, SP 📍</h1>
                         <p class="date">Quinta feira, 22 de maio</p>
                         <p id="city-description">
-                            São Paulo é uma metrópole vibrante e multicultural,
-                            conhecida por sua intensa vida urbana, arquitetura
-                            icônica e uma rica cena cultural. É o coração
-                            financeiro do Brasil, repleta de museus, teatros,
-                            parques e gastronomia diversificada. A cidade é um
-                            centro de inovação e criatividade, atraindo
-                            visitantes de todo o mundo.
+                            São Paulo, a maior cidade do Brasil e uma das mais
+                            influentes da América Latina, é um verdadeiro
+                            mosaico cultural. Com sua diversidade étnica, a
+                            cidade se destaca pela gastronomia variada, rica em
+                            sabores do mundo inteiro. Seus museus, teatros e
+                            galerias são referências artísticas, enquanto os
+                            icônicos parques, como o Ibirapuera, oferecem um
+                            respiro verde no meio do concreto. São Paulo pulsa
+                            com energia, criatividade e oportunidades, atraindo
+                            visitantes de todas as partes do mundo.
                         </p>
+                    </div>
+
+                    <div class="cep-info">
+                        <div class="cep-item">
+                            <p class="label">Logradouro</p>
+                            <p class="content">Rua Ermelhindo</p>
+                        </div>
+                        <div class="cep-item">
+                            <p class="label">Localidade</p>
+                            <p class="content">Santana de Parnaíba</p>
+                        </div>
+                        <div class="cep-item">
+                            <p class="label">Estado</p>
+                            <p class="content">São Paulo</p>
+                        </div>
+                        <div class="cep-item">
+                            <p class="label">IBGE</p>
+                            <p class="content">354655</p>
+                        </div>
+                        <div class="cep-item">
+                            <p class="label">Bairro</p>
+                            <p class="content">Colinas da Anhanguera</p>
+                        </div>
+                        <div class="cep-item">
+                            <p class="label">Região</p>
+                            <p class="content">Sudeste</p>
+                        </div>
+                        <div class="cep-item">
+                            <p class="label">UF</p>
+                            <p class="content">SP</p>
+                        </div>
+                        <div class="cep-item">
+                            <p class="label">DDD</p>
+                            <p class="content">11</p>
+                        </div>
                     </div>
                 </div>
             </section>
+
             <section class="dual-section">
                 <section id="todays-highlights">
                     <h1 class="section-header">Destaques de hoje</h1>

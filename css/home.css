@@ -1,5 +1,5 @@
 :root {
-    --text-color: hsl(209, 100%, 95%);
+    --text-color: hsl(209, 100%, 100%);
     --body-bgc: hsl(212, 10%, 10%);
     --primary-bgc: hsl(212, 10%, 18%);
     --secondary-bgc: hsl(212, 10%, 12%);
@@ -20,7 +20,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 3rem;
+    gap: 4rem;
 }
 
 header input {
@@ -40,8 +40,21 @@ header h1 {
     gap: 0.5rem;
 }
 
-header h1 svg {
-    fill: red;
+header form {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+header form button {
+    background-color: transparent;
+    border: 0;
+}
+
+header nav {
+    display: flex;
+    gap: 1rem;
 }
 
 main {
@@ -51,11 +64,10 @@ main {
 
 #main-info {
     display: flex;
-    gap: 1.2rem;
+    gap: 2rem;
 }
 
 #main-info .card {
-    /* background-color: var(--primary-bgc); */
     background-image: url("https://i.pinimg.com/originals/84/41/3b/84413b084032a95c7705b5eaeb4ce3b7.jpg");
     background-size: cover;
     background-position: center;
@@ -90,12 +102,8 @@ main {
 }
 
 #main-info .location-info {
-    box-shadow: -1px 1px 5px hsla(0, 0%, 0%, 0.5);
-    background-color: var(--primary-bgc);
-    padding: 2rem;
-    border-radius: 5px;
     display: grid;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .location-info .location {
@@ -124,36 +132,27 @@ main {
     color: rgb(179, 179, 179);
 }
 
-#main-info form .label-container {
+.cep-info {
     display: grid;
-    gap: 0.5rem;
-    font-weight: bold;
+    gap: 0.7rem;
+    grid-template-columns: repeat(4, 1fr);
 }
 
-#main-info form span {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-#main-info form input {
-    width: 50%;
-    background-color: transparent;
-    border: 0;
-    border-bottom: 1px solid gray;
-    padding: 0.5rem;
-    outline: none;
-    color: var(--text-color);
-}
-
-#main-info form button {
-    background-color: var(--primary-bgc);
-    color: var(--text-color);
-    border: 1px solid hsl(0, 0%, 38%);
-    padding: 0.5rem;
+.cep-item {
+    padding: 0.9rem;
+    border: 2px solid var(--primary-bgc);
     border-radius: 3px;
-    outline: none;
-    cursor: pointer;
+    display: grid;
+    gap: 1.2rem;
+}
+
+.cep-item .label {
+    font-size: 0.9em;
+    color: gray;
+}
+
+.cep-item .content {
+    font-size: 1.3em;
 }
 
 .dual-section {
@@ -208,7 +207,7 @@ main {
     transition: 0.2s;
 }
 
-#todays-highlights .info-item:hover img{
+#todays-highlights .info-item:hover img {
     transform: translateY(-3px);
 }
 
@@ -268,7 +267,6 @@ main {
 .week-item:hover {
     transform: translateX(10px);
     border-color: hsl(212, 40%, 50%);
-    /* border-left: 0.5rem solid hsl(212, 10%, 28%); */
 }
 
 .week-item .weather {
@@ -295,7 +293,6 @@ main {
 
 .todays-forecast-container {
     display: grid;
-    /* grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); */
     gap: 1rem;
 }
 
