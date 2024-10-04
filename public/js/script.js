@@ -1,3 +1,4 @@
+const dateArea = document.getElementById("date");
 const logradouroArea = document.getElementById("logradouro-area");
 const bairroArea = document.getElementById("bairro-area");
 const localidadeArea = document.getElementById("localidade-area");
@@ -7,6 +8,44 @@ const ibgeArea = document.getElementById("ibge-area");
 const dddArea = document.getElementById("ddd-area");
 const ufArea = document.getElementById("uf-area");
 const cityDescriptionArea = document.getElementById("city-description");
+const localArea = document.getElementById("local");
+
+function getCurrentDate() {
+    const months = [
+        "Janeiro",
+        "Fevereiro",
+        "Março",
+        "Abril",
+        "Maio",
+        "Junho",
+        "Julho",
+        "Agosto",
+        "Setembro",
+        "Outubro",
+        "Novembro",
+        "Dezembro",
+    ];
+
+    const daysOfWeek = [
+        "Domingo",
+        "Segunda-feira",
+        "Terça-feira",
+        "Quarta-feira",
+        "Quinta-feira",
+        "Sexta-feira",
+        "Sábado",
+    ];
+
+    const dateTime = new Date();
+
+    const month = String(dateTime.getMonth() + 1).padStart(2, "0"); // Meses começam do 0
+    const day = String(dateTime.getDate()).padStart(2, "0");
+
+    const dayOfWeek = dateTime.getDay();
+
+    const formattedDateTime = `${daysOfWeek[dayOfWeek]}, ${day} de ${months[month]}`;
+    return formattedDateTime;
+}
 
 // Function to fetch the cep data
 async function fetchCep(cep) {
@@ -66,13 +105,23 @@ async function fillLocationInfo(data) {
     dddArea.textContent = data.ddd;
     ufArea.textContent = data.uf;
 
+    localArea.textContent = `${data.cep}, ${data.localidade} - ${data.uf} 📍`;
+
     const cityDescription = await getCityDescription(data.localidade);
-    if (cityDescription) {
-        cityDescriptionArea.textContent = cityDescription;
-        console.log("Descrição da cidade:", cityDescription);
-    } else {
+
+    if (!cityDescription) {
         cityDescriptionArea.textContent = "Descrição não disponível.";
+        return;
     }
+
+    cityDescriptionArea.textContent = cityDescription;
 }
 
-document.querySelector("form").addEventListener("submit", handleSearch);
+window.addEventListener("DOMContentLoaded", async () => {
+    document.querySelector("form").addEventListener("submit", handleSearch);
+
+    const defaultLocationData = await fetchCep("01001000");
+    fillLocationInfo(defaultLocationData);
+    
+    dateArea.textContent = getCurrentDate();
+});
