@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/theme.css" />
         <link rel="stylesheet" href="css/home.css" />
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="js/script.js" defer></script>
     </head>
     <body>
@@ -25,7 +26,12 @@
             </nav>
 
             <form action="">
-                <input type="text" placeholder="pesquisar cep:" />
+                <input
+                    type="text"
+                    name="cep"
+                    id="cep"
+                    placeholder="pesquisar cep:"
+                />
                 <button type="submit">
                     <img src="assets/search.svg" alt="" />
                 </button>
@@ -62,35 +68,41 @@
                     <div class="cep-info">
                         <div class="cep-item">
                             <p class="label">Logradouro</p>
-                            <p class="content">Rua Ermelhindo</p>
+                            <p class="content" id="logradouro-area">
+                                Rua Ermelhindo
+                            </p>
                         </div>
                         <div class="cep-item">
                             <p class="label">Localidade</p>
-                            <p class="content">Santana de Parnaíba</p>
+                            <p class="content" id="localidade-area">
+                                Santana de Parnaíba
+                            </p>
                         </div>
                         <div class="cep-item">
                             <p class="label">Estado</p>
-                            <p class="content">São Paulo</p>
+                            <p class="content" id="estado-area">São Paulo</p>
                         </div>
                         <div class="cep-item">
                             <p class="label">IBGE</p>
-                            <p class="content">354655</p>
+                            <p class="content" id="ibge-area">354655</p>
                         </div>
                         <div class="cep-item">
                             <p class="label">Bairro</p>
-                            <p class="content">Colinas da Anhanguera</p>
+                            <p class="content" id="bairro-area">
+                                Colinas da Anhanguera
+                            </p>
                         </div>
                         <div class="cep-item">
                             <p class="label">Região</p>
-                            <p class="content">Sudeste</p>
+                            <p class="content" id="regiao-area">Sudeste</p>
                         </div>
                         <div class="cep-item">
                             <p class="label">UF</p>
-                            <p class="content">SP</p>
+                            <p class="content" id="uf-area">SP</p>
                         </div>
                         <div class="cep-item">
                             <p class="label">DDD</p>
-                            <p class="content">11</p>
+                            <p class="content" id="ddd-area">11</p>
                         </div>
                     </div>
                 </div>
