@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Início</title>
+        <link rel="stylesheet" href="../css/reset.css" />
+        <link rel="stylesheet" href="../css/theme.css" />
+        <link rel="stylesheet" href="../css/history.css" />
+        <script src="js/script.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1><img src="assets/logo.svg" alt="" /> LocalizaWeather</h1>
+
+            <nav>
+                <ul>
+                    <li><a href="./pages/history.html">Histórico</a></li>
+                    <li>
+                        <a href="./pages/locals.html"
+                            >Localidades mais procuradas</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+
+            <form action="">
+                <input type="text" placeholder="pesquisar cep:" />
+                <button type="submit">
+                    <img src="assets/search.svg" alt="" />
+                </button>
+            </form>
+        </header>
+        <main>
+            <section id="main-info">
+                <div class="card">
+                    <h1>5°c</h1>
+                    <p>Nublado</p>
+                    <p class="temperature">
+                        <span class="max-temperature">26°c</span> /
+                        <span class="min-temperature">2°c</span>
+                    </p>
+                </div>
+                <div class="location-info">
+                    <div class="location">
+                        <h1 class="city">São Paulo, SP 📍</h1>
+                        <p class="date">Quinta feira, 22 de maio</p>
+                        <p id="city-description">
+                            São Paulo, a maior cidade do Brasil e uma das mais
+                            influentes da América Latina, é um verdadeiro
+                            mosaico cultural. Com sua diversidade étnica, a
+                            cidade se destaca pela gastronomia variada, rica em
+                            sabores do mundo inteiro. Seus museus, teatros e
+                            galerias são referências artísticas, enquanto os
+                            icônicos parques, como o Ibirapuera, oferecem um
+                            respiro verde no meio do concreto. São Paulo pulsa
+                            com energia, criatividade e oportunidades, atraindo
+                            visitantes de todas as partes do mundo.
+                        </p>
+                    </div>
+
+                    <div class="cep-info">
+                        <div class="cep-item">
+                            <p class="label">Logradouro</p>
+                            <p class="content">Rua Ermelhindo</p>
+                        </div>
+                        <div class="cep-item">
+                            <p class="label">Localidade</p>
+                            <p class="content">Santana de Parnaíba</p>
+                        </div>
+                        <div class="cep-item">
+                            <p class="label">Estado</p>
+                            <p class="content">São Paulo</p>
+                        </div>
+                        <div class="cep-item">
+                            <p class="label">IBGE</p>
+                            <p class="content">354655</p>
+                        </div>
+                        <div class="cep-item">
+                            <p class="label">Bairro</p>
+                            <p class="content">Colinas da Anhanguera</p>
+                        </div>
+                        <div class="cep-item">
+                            <p class="label">Região</p>
+                            <p class="content">Sudeste</p>
+                        </div>
+                        <div class="cep-item">
+                            <p class="label">UF</p>
+                            <p class="content">SP</p>
+                        </div>
+                        <div class="cep-item">
+                            <p class="label">DDD</p>
+                            <p class="content">11</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="dual-section">
+                <section id="todays-highlights">
+                    <h1 class="section-header">Destaques de hoje</h1>
+                    <div class="info-container">
+                        <div class="sunrise-sunset">
+                            <div class="info-item">
+                                <img
+                                    src="assets/sunrise.svg"
+                                    alt=""
+                                    class="sunrise-sunset-img"
+                                />
+                                <span>
+                                    <p>Amanhecer</p>
+                                    <h1>6:12</h1></span
+                                >
+                            </div>
+                            <div class="info-item">
+                                <img
+                                    src="assets/sunset.svg"
+                                    alt=""
+                                    class="sunrise-sunset-img"
+                                />
+                                <span>
+                                    <p>Anoitecer</p>
+                                    <h1>18:02</h1></span
+                                >
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <img
+                                src="assets/humidity.svg"
+                                alt=""
+                                class="info-item-img"
+                            />
+                            <span>
+                                <p>Humidade</p>
+                                <h2>81%</h2></span
+                            >
+                        </div>
+                        <div class="info-item">
+                            <img
+                                src="assets/pressure.svg"
+                                alt=""
+                                class="info-item-img"
+                            />
+                            <span>
+                                <p>Pressão</p>
+                                <h2>1025hPa</h2></span
+                            >
+                        </div>
+                        <div class="info-item">
+                            <img
+                                src="assets/temperature.svg"
+                                alt=""
+                                class="info-item-img"
+                            />
+                            <span>
+                                <p>Sensação de temperatura</p>
+                                <h2>25°</h2></span
+                            >
+                        </div>
+                    </div>
+                </section>
+
+                <section id="week-forecast">
+                    <h1 class="section-header">Previsão da Semana</h1>
+                    <div class="week-forecast-container">
+                        <div class="week-item">
+                            <div class="weather">
+                                <img src="assets/nublado.png" alt="" />
+                                <p class="temperature">7°c</p>
+                            </div>
+                            <p>2 de março</p>
+                        </div>
+                        <div class="week-item">
+                            <div class="weather">
+                                <img src="assets/nublado.png" alt="" />
+                                <p class="temperature">7°c</p>
+                            </div>
+                            <p>2 de março</p>
+                        </div>
+                        <div class="week-item">
+                            <div class="weather">
+                                <img src="assets/nublado.png" alt="" />
+                                <p class="temperature">7°c</p>
+                            </div>
+                            <p>2 de março</p>
+                        </div>
+                        <div class="week-item">
+                            <div class="weather">
+                                <img src="assets/nublado.png" alt="" />
+                                <p class="temperature">7°c</p>
+                            </div>
+                            <p>2 de março</p>
+                        </div>
+                        <div class="week-item">
+                            <div class="weather">
+                                <img src="assets/nublado.png" alt="" />
+                                <p class="temperature">7°c</p>
+                            </div>
+                            <p>2 de março</p>
+                        </div>
+                        <div class="week-item">
+                            <div class="weather">
+                                <img src="assets/nublado.png" alt="" />
+                                <p class="temperature">7°c</p>
+                            </div>
+                            <p>2 de março</p>
+                        </div>
+                        <div class="week-item">
+                            <div class="weather">
+                                <img src="assets/nublado.png" alt="" />
+                                <p class="temperature">7°c</p>
+                            </div>
+                            <p>2 de março</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <section id="todays-forecast">
+                <h1 class="section-header">Previsão de hoje</h1>
+                <div class="todays-forecast-container">
+                    <div class="line-container">
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                    </div>
+
+                    <div class="line-container">
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                        <div class="item">
+                            <p class="hour">12:00</p>
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">21°c</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
