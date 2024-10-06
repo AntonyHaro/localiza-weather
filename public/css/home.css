@@ -280,7 +280,7 @@ canvas {
 .week-forecast-container {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 0.4rem;
+    gap: 1rem;
 }
 
 .week-item {
