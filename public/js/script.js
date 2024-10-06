@@ -119,35 +119,66 @@ async function fillLocationInfo(data) {
 
 function createHourForecastGraph() {
     const ctx = document.getElementById("hour-forecast").getContext("2d");
-    const hourForecast = new Chart(ctx, {
-        type: "line", // Gráfico de linha para temperaturas
+    if (window.hourForecast) {
+        window.hourForecast.destroy(); // Limpa o gráfico anterior, se existir
+    }
+    window.hourForecast = new Chart(ctx, {
+        type: "bar",
         data: {
             labels: [
-                "00:00",
-                "03:00",
+                "02:00",
+                "04:00",
                 "06:00",
-                "09:00",
+                "08:00",
+                "10:00",
                 "12:00",
-                "15:00",
+                "14:00",
+                "16:00",
                 "18:00",
+                "20:00",
+                "22:00",
+                "24:00",
             ],
             datasets: [
                 {
                     label: "Temperatura (°C)",
-                    data: [22, 21, 19, 18, 17, 16, 15], // Dados de temperatura
-                    backgroundColor: "rgba(54, 162, 235, 0.2)",
-                    borderColor: "rgba(54, 162, 235, 1)",
+                    data: [12, 21, 19, 18, 17, 16, 15, 18, 17, 16, 16, 21],
+                    backgroundColor: "rgba(54, 162, 235, 0)",
+                    // backgroundColor: "gray",
+                    borderColor: "gray",
                     borderWidth: 2,
                 },
             ],
         },
         options: {
-            scales: {
-                y: {
-                    beginAtZero: false,
+            plugins: {
+                datalabels: {
+                    anchor: "end", // Onde o rótulo será posicionado
+                    align: "end", // Alinhamento do rótulo
+                    formatter: (value) => {
+                        return value + "°C"; // Formatação do rótulo
+                    },
+                    color: "white", // Cor do texto
                 },
             },
+            scales: {
+                x: {
+                    grid: {
+                        display: false,
+                    },
+                },
+                y: {
+                    // beginAtZero: true,
+                    display: false,
+                    grid: {
+                        display: false,
+                    },
+                },
+            },
+            responsive: true,
+            maintainAspectRatio: true,
         },
+        plugins: [ChartDataLabels], // Adiciona o plugin
     });
 }
 

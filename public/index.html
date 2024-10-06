@@ -9,6 +9,8 @@
         <link rel="stylesheet" href="css/home.css" />
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
         <script src="js/script.js" defer></script>
     </head>
     <body>
@@ -156,65 +158,64 @@
                     </div>
                 </section>
 
-                <section id="week-forecast">
-                    <h1 class="section-header">Previsão da Semana</h1>
-                    <div class="week-forecast-container">
-                        <div class="week-item">
-                            <div class="weather">
-                                <img src="assets/nublado.png" alt="" />
-                                <p class="temperature">7°c</p>
-                            </div>
-                            <p>2 de março</p>
-                        </div>
-                        <div class="week-item">
-                            <div class="weather">
-                                <img src="assets/nublado.png" alt="" />
-                                <p class="temperature">7°c</p>
-                            </div>
-                            <p>2 de março</p>
-                        </div>
-                        <div class="week-item">
-                            <div class="weather">
-                                <img src="assets/nublado.png" alt="" />
-                                <p class="temperature">7°c</p>
-                            </div>
-                            <p>2 de março</p>
-                        </div>
-                        <div class="week-item">
-                            <div class="weather">
-                                <img src="assets/nublado.png" alt="" />
-                                <p class="temperature">7°c</p>
-                            </div>
-                            <p>2 de março</p>
-                        </div>
-                        <div class="week-item">
-                            <div class="weather">
-                                <img src="assets/nublado.png" alt="" />
-                                <p class="temperature">7°c</p>
-                            </div>
-                            <p>2 de março</p>
-                        </div>
-                        <div class="week-item">
-                            <div class="weather">
-                                <img src="assets/nublado.png" alt="" />
-                                <p class="temperature">7°c</p>
-                            </div>
-                            <p>2 de março</p>
-                        </div>
-                        <div class="week-item">
-                            <div class="weather">
-                                <img src="assets/nublado.png" alt="" />
-                                <p class="temperature">7°c</p>
-                            </div>
-                            <p>2 de março</p>
-                        </div>
-                    </div>
+                <section id="todays-forecast">
+                    <h1 class="section-header">Previsão de hoje</h1>
+                    <canvas id="hour-forecast"></canvas>
                 </section>
             </section>
-
-            <section id="todays-forecast">
-                <h1 class="section-header">Previsão de hoje</h1>
-                <canvas id="hour-forecast"></canvas>
+            <section id="week-forecast">
+                <h1 class="section-header">Previsão da Semana</h1>
+                <div class="week-forecast-container">
+                    <div class="week-item">
+                        <div class="weather">
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">7°c</p>
+                        </div>
+                        <p>2 de março</p>
+                    </div>
+                    <div class="week-item">
+                        <div class="weather">
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">7°c</p>
+                        </div>
+                        <p>2 de março</p>
+                    </div>
+                    <div class="week-item">
+                        <div class="weather">
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">7°c</p>
+                        </div>
+                        <p>2 de março</p>
+                    </div>
+                    <div class="week-item">
+                        <div class="weather">
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">7°c</p>
+                        </div>
+                        <p>2 de março</p>
+                    </div>
+                    <div class="week-item">
+                        <div class="weather">
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">7°c</p>
+                        </div>
+                        <p>2 de março</p>
+                    </div>
+                    <div class="week-item">
+                        <div class="weather">
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">7°c</p>
+                        </div>
+                        <p>2 de março</p>
+                    </div>
+                    <div class="week-item">
+                        <div class="weather">
+                            <img src="assets/nublado.png" alt="" />
+                            <p class="temperature">7°c</p>
+                        </div>
+                        <p>2 de março</p>
+                    </div>
+                </div>
             </section>
         </main>
     </body>
