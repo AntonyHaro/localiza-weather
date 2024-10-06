@@ -209,7 +209,7 @@ main {
         var(--secondary-bgc) 70%,
         transparent 30%
     );
-    background-size: 90%;
+    background-size: 100%;
     background-repeat: no-repeat;
     box-shadow: -1px 1px 5px hsla(0, 0%, 0%, 0.5);
     padding: 2rem;
@@ -222,7 +222,7 @@ main {
 
 #todays-highlights .info-item:hover {
     transform: translateY(-7px);
-    background-size: 105%;
+    background-size: 110%;
 }
 
 #todays-highlights .info-item:hover img {
@@ -265,56 +265,47 @@ main {
 }
 
 canvas {
+    background-color: var(--secondary-bgc);
+    padding: 1rem;
+    border-radius: 5px;
     height: auto !important;
     width: 100% !important;
 }
 
 #week-forecast {
-    flex: 1;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 1rem;
 }
 
 .week-forecast-container {
-    width: 100%;
     display: grid;
+    grid-template-columns: repeat(7, 1fr);
     gap: 0.4rem;
 }
 
 .week-item {
+    width: 100%;
     background-color: var(--primary-bgc);
     box-shadow: -1px 1px 5px hsla(0, 0%, 0%, 0.5);
-    padding: 0.9rem;
-    border-radius: 0 5px 5px 0;
-    border-left: 0.5rem solid hsl(212, 10%, 28%);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.9em;
-    color: gray;
+    padding: 1rem;
+    border-radius: 5px;
+    display: grid;
+    place-items: center;
+    gap: 1rem;
     transition: 0.2s;
 }
 
 .week-item:hover {
-    transform: translateX(10px);
+    transform: translateY(-5px);
     border-color: hsl(212, 40%, 50%);
 }
 
-.week-item .weather {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-right: 10%;
+.week-item img {
+    height: 70px;
 }
 
-.week-item .weather .temperature {
-    font-size: 1.2em;
+.week-item .temperature {
+    font-size: 2em;
     font-weight: bold;
     color: var(--text-color);
-}
-
-.week-item img {
-    height: 24px;
 }

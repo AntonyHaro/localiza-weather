@@ -144,7 +144,6 @@ function createHourForecastGraph() {
                     label: "Temperatura (°C)",
                     data: [12, 21, 19, 18, 17, 16, 15, 18, 17, 16, 16, 21],
                     backgroundColor: "rgba(54, 162, 235, 0)",
-                    // backgroundColor: "gray",
                     borderColor: "gray",
                     borderWidth: 2,
                 },
