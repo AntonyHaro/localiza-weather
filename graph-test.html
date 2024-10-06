@@ -1,25 +1,35 @@
 <canvas id="weatherChart"></canvas>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    const ctx = document.getElementById('weatherChart').getContext('2d');
+    const ctx = document.getElementById("weatherChart").getContext("2d");
     const weatherChart = new Chart(ctx, {
-        type: 'line', // Gráfico de linha para temperaturas
+        type: "line", // Gráfico de linha para temperaturas
         data: {
-            labels: ['00:00', '03:00', '06:00', '09:00', '12:00', '15:00', '18:00'],
-            datasets: [{
-                label: 'Temperatura (°C)',
-                data: [22, 21, 19, 18, 17, 16, 15], // Dados de temperatura
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 2
-            }]
+            labels: [
+                "00:00",
+                "03:00",
+                "06:00",
+                "09:00",
+                "12:00",
+                "15:00",
+                "18:00",
+            ],
+            datasets: [
+                {
+                    label: "Temperatura (°C)",
+                    data: [22, 21, 19, 18, 17, 16, 15], // Dados de temperatura
+                    backgroundColor: "rgba(54, 162, 235, 0.2)",
+                    borderColor: "rgba(54, 162, 235, 1)",
+                    borderWidth: 2,
+                },
+            ],
         },
         options: {
             scales: {
                 y: {
-                    beginAtZero: false
-                }
-            }
-        }
+                    beginAtZero: false,
+                },
+            },
+        },
     });
 </script>
