@@ -117,11 +117,47 @@ async function fillLocationInfo(data) {
     cityDescriptionArea.textContent = cityDescription;
 }
 
+function createHourForecastGraph() {
+    const ctx = document.getElementById("hour-forecast").getContext("2d");
+    const hourForecast = new Chart(ctx, {
+        type: "line", // Gráfico de linha para temperaturas
+        data: {
+            labels: [
+                "00:00",
+                "03:00",
+                "06:00",
+                "09:00",
+                "12:00",
+                "15:00",
+                "18:00",
+            ],
+            datasets: [
+                {
+                    label: "Temperatura (°C)",
+                    data: [22, 21, 19, 18, 17, 16, 15], // Dados de temperatura
+                    backgroundColor: "rgba(54, 162, 235, 0.2)",
+                    borderColor: "rgba(54, 162, 235, 1)",
+                    borderWidth: 2,
+                },
+            ],
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: false,
+                },
+            },
+        },
+    });
+}
+
 window.addEventListener("DOMContentLoaded", async () => {
     document.querySelector("form").addEventListener("submit", handleSearch);
 
     const defaultLocationData = await fetchCep("01001000");
     fillLocationInfo(defaultLocationData);
-    
+
     dateArea.textContent = getCurrentDate();
 });
+
+createHourForecastGraph();
