@@ -63,6 +63,21 @@ async function fetchCep(cep) {
     }
 }
 
+async function getWeather(city) {
+    try {
+        const response = await fetch(`/weather/${city}`);
+
+        if (!response.ok)
+            throw new Error("Erro na solicitação de descrição da cidade");
+
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Erro ao fazer a solicitação:", error);
+        return null;
+    }
+}
+
 // Search the city description using the endpoint to call the OpenAI API
 async function getCityDescription(city) {
     try {
@@ -81,14 +96,6 @@ async function getCityDescription(city) {
     } catch (error) {
         console.error("Erro ao fazer a solicitação:", error);
         return null;
-    }
-}
-
-async function getCityWeather (city) {
-    try {
-        const response = 
-    } catch (error) {
-
     }
 }
 
@@ -116,6 +123,9 @@ async function fillLocationInfo(data) {
     localArea.textContent = `${data.cep}, ${data.localidade} - ${data.uf} 📍`;
 
     const cityDescription = await getCityDescription(data.localidade);
+    const weather = await getWeather(data.localidade);
+
+    console.log(weather);
 
     if (!cityDescription) {
         cityDescriptionArea.textContent = "Descrição não disponível.";
@@ -128,29 +138,16 @@ async function fillLocationInfo(data) {
 function createHourForecastGraph() {
     const ctx = document.getElementById("hour-forecast").getContext("2d");
     if (window.hourForecast) {
-        window.hourForecast.destroy(); // Limpa o gráfico anterior, se existir
+        window.hourForecast.destroy();
     }
     window.hourForecast = new Chart(ctx, {
         type: "bar",
         data: {
-            labels: [
-                "02:00",
-                "04:00",
-                "06:00",
-                // "08:00",
-                // "10:00",
-                // "12:00",
-                // "14:00",
-                // "16:00",
-                // "18:00",
-                // "20:00",
-                // "22:00",
-                // "24:00",
-            ],
+            labels: ["02:00", "04:00", "06:00"],
             datasets: [
                 {
                     label: "Temperatura (°C)",
-                    data: [12, 21, 19,],
+                    data: [12, 21, 19],
                     backgroundColor: "rgba(54, 162, 235, 0)",
                     borderColor: "gray",
                     borderWidth: 2,
@@ -160,12 +157,12 @@ function createHourForecastGraph() {
         options: {
             plugins: {
                 datalabels: {
-                    anchor: "end", // Onde o rótulo será posicionado
-                    align: "end", // Alinhamento do rótulo
+                    anchor: "end",
+                    align: "end",
                     formatter: (value) => {
-                        return value + "°C"; // Formatação do rótulo
+                        return value + "°C";
                     },
-                    color: "white", // Cor do texto
+                    color: "white",
                 },
             },
             scales: {

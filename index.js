@@ -46,16 +46,15 @@ app.post("/city/:city", async (req, res) => {
     }
 });
 
-// endpoint to get the weather info
-app.get("weather/:city", async (req, res) => {
+app.get("/weather/:city", async (req, res) => {
     const { city } = req.params;
-    const apiKey = process.env.OPEN_WEATHER_API_KEY;
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=pt_br&appid=${apiKey}`;
+    const apiKey = process.env.OPENWEATHER_API_KEY;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&lang=pt_br&unit=metric`;
 
     try {
         const response = await axios.get(url);
-        const weatherData = response.data;
-        res.json({ weatherData });
+        const data = response.data;
+        res.json(data);
     } catch (error) {
         console.log("Erro na solicitação:", error);
         res.status(500).send("Erro ao processar a solicitação");
