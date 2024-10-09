@@ -84,6 +84,14 @@ async function getCityDescription(city) {
     }
 }
 
+async function getCityWeather (city) {
+    try {
+        const response = 
+    } catch (error) {
+
+    }
+}
+
 // Handle the submit form event
 async function handleSearch(event) {
     event.preventDefault();
