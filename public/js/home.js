@@ -1,3 +1,4 @@
+// cep areas
 const dateArea = document.getElementById("date");
 const logradouroArea = document.getElementById("logradouro-area");
 const bairroArea = document.getElementById("bairro-area");
@@ -9,6 +10,13 @@ const dddArea = document.getElementById("ddd-area");
 const ufArea = document.getElementById("uf-area");
 const cityDescriptionArea = document.getElementById("city-description");
 const localArea = document.getElementById("local");
+
+//weather areas
+const humidityArea = document.getElementById("humidity");
+const feelsLikeArea = document.getElementById("feels-like");
+const pressureArea = document.getElementById("pressure");
+const sunsetArea = document.getElementById("sunset");
+const sunriseArea = document.getElementById("sunrise");
 
 function getCurrentDate() {
     const months = [
@@ -107,6 +115,10 @@ async function handleSearch(event) {
 
     if (!data) return;
     fillLocationInfo(data);
+
+    const weather = await getWeather(data.localidade);
+    fillWeatherInfo(weather);
+    console.log(weather);
 }
 
 // Fill the location info into the DOM
@@ -123,9 +135,6 @@ async function fillLocationInfo(data) {
     localArea.textContent = `${data.cep}, ${data.localidade} - ${data.uf} 📍`;
 
     const cityDescription = await getCityDescription(data.localidade);
-    const weather = await getWeather(data.localidade);
-
-    console.log(weather);
 
     if (!cityDescription) {
         cityDescriptionArea.textContent = "Descrição não disponível.";
@@ -135,8 +144,16 @@ async function fillLocationInfo(data) {
     cityDescriptionArea.textContent = cityDescription;
 }
 
+function fillWeatherInfo(weather) {
+    sunsetArea.textContent = weather.main.sunset;
+    sunriseArea.textContent = weather.main.sunrise;
+    humidityArea.textContent = weather.main.humidity;
+    pressureArea.textContent = weather.main.pressure;
+    feelsLikeArea.textContent = weather.main.feels_like;
+}
+
 function createHourForecastGraph() {
-    const ctx = document.getElementById("hour-forecast").getContext("2d");
+    const ctx = document.getElementById("hour-graph").getContext("2d");
     if (window.hourForecast) {
         window.hourForecast.destroy();
     }
@@ -148,7 +165,7 @@ function createHourForecastGraph() {
                 {
                     label: "Temperatura (°C)",
                     data: [12, 21, 19],
-                    backgroundColor: "rgba(54, 162, 235, 0)",
+                    backgroundColor: "rgba(75, 192, 192, 0.1)",
                     borderColor: "gray",
                     borderWidth: 2,
                 },
@@ -182,7 +199,50 @@ function createHourForecastGraph() {
             responsive: true,
             maintainAspectRatio: true,
         },
-        plugins: [ChartDataLabels], // Adiciona o plugin
+        plugins: [ChartDataLabels],
+    });
+}
+
+function createWeekForecastGraph() {
+    const ctx = document.getElementById("week-graph").getContext("2d");
+    if (window.weekForecast) {
+        window.weekForecast.destroy();
+    }
+    window.weekForecast = new Chart(ctx, {
+        type: "line",
+        data: {
+            labels: ["Segunda", "Terça", "Quarta", "Quinta", "Sexta"],
+            datasets: [
+                {
+                    label: "Temperatura (°C)",
+                    data: [12, 21, 19, 30, 25],
+                    backgroundColor: "rgba(75, 192, 192, 0.1)",
+                    fill: true,
+                    borderColor: "gray",
+                    borderWidth: 3,
+                },
+            ],
+        },
+        options: {
+            plugins: {
+                datalabels: {
+                    anchor: "end",
+                    align: "end",
+                    formatter: (value) => {
+                        return value + "°C";
+                    },
+                    color: "white",
+                },
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                },
+            },
+            responsive: true,
+            maintainAspectRatio: true,
+        },
+        plugins: [ChartDataLabels],
     });
 }
 
@@ -193,6 +253,17 @@ window.addEventListener("DOMContentLoaded", async () => {
     fillLocationInfo(defaultLocationData);
 
     dateArea.textContent = getCurrentDate();
+    createHourForecastGraph();
+    createWeekForecastGraph();
 });
 
-createHourForecastGraph();
+// format sunrise - sunset
+
+// const sunriseTimestamp = 1728549456;
+// const sunsetTimestamp = 1728594536;
+
+// const sunrise = new Date(sunriseTimestamp * 1000);
+// const sunset = new Date(sunsetTimestamp * 1000);
+
+// console.log("Nascer do sol:", sunrise.toUTCString());
+// console.log("Pôr do sol:", sunset.toUTCString());

@@ -105,7 +105,7 @@
                                 />
                                 <span>
                                     <p>Amanhecer</p>
-                                    <h1>6:12</h1></span
+                                    <h1 id="sunrise">6:12</h1></span
                                 >
                             </div>
                             <div class="info-item">
@@ -116,7 +116,7 @@
                                 />
                                 <span>
                                     <p>Anoitecer</p>
-                                    <h1>18:02</h1></span
+                                    <h1 id="sunset">18:02</h1></span
                                 >
                             </div>
                         </div>
@@ -128,8 +128,8 @@
                             />
                             <span>
                                 <p>Humidade</p>
-                                <h2>81%</h2></span
-                            >
+                                <h2 id="humidity"></h2
+                            ></span>
                         </div>
                         <div class="info-item">
                             <img
@@ -139,7 +139,7 @@
                             />
                             <span>
                                 <p>Pressão</p>
-                                <h2>1025hPa</h2></span
+                                <h2 id="pressure">1025hPa</h2></span
                             >
                         </div>
                         <div class="info-item">
@@ -158,38 +158,12 @@
 
                 <section id="todays-forecast">
                     <h1 class="section-header">Previsão de hoje</h1>
-                    <canvas id="hour-forecast"></canvas>
+                    <canvas id="hour-graph"></canvas>
                 </section>
             </section>
             <section id="week-forecast">
                 <h1 class="section-header">Previsão de 5 dias</h1>
-                <div class="week-forecast-container">
-                    <div class="week-item">
-                        <p>Segunda Feira</p>
-                        <img src="assets/nublado.png" alt="" />
-                        <p class="temperature">7°c</p>
-                    </div>
-                    <div class="week-item">
-                        <p>Segunda Feira</p>
-                        <img src="assets/nublado.png" alt="" />
-                        <p class="temperature">7°c</p>
-                    </div>
-                    <div class="week-item">
-                        <p>Segunda Feira</p>
-                        <img src="assets/nublado.png" alt="" />
-                        <p class="temperature">7°c</p>
-                    </div>
-                    <div class="week-item">
-                        <p>Segunda Feira</p>
-                        <img src="assets/nublado.png" alt="" />
-                        <p class="temperature">7°c</p>
-                    </div>
-                    <div class="week-item">
-                        <p>Segunda Feira</p>
-                        <img src="assets/nublado.png" alt="" />
-                        <p class="temperature">7°c</p>
-                    </div>
-                </div>
+                <canvas id="week-graph"></canvas>
             </section>
         </main>
     </body>
