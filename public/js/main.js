@@ -38,7 +38,7 @@ async function fetchCep(cep) {
 
 async function getWeather(city) {
     try {
-        const response = await fetch(`/weather/${city}`);
+        const response = await fetch(`/currentWeather/${city}`);
 
         if (!response.ok)
             throw new Error("Erro na solicitação de descrição da cidade");
@@ -155,7 +155,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     // set the default data to display in the page
     const defaultData = await fetchCep("01001000");
 
-    if (!data) return;
+    if (!defaultData) return;
     fillLocationInfo(defaultData);
 
     const weather = await getWeather(data.localidade);

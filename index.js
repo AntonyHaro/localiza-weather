@@ -7,11 +7,6 @@ require("dotenv").config();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
-// test endpoint
-app.get("/test", (req, res) => {
-    res.json({ message: "Hello from the server!" });
-});
-
 // endpoint to generate the description from the param city using the openAI api
 app.post("/city/:city", async (req, res) => {
     const { city } = req.params;
@@ -46,15 +41,40 @@ app.post("/city/:city", async (req, res) => {
     }
 });
 
-app.get("/weather/:city", async (req, res) => {
+app.get("/currentWeather/:city", async (req, res) => {
     const { city } = req.params;
     const apiKey = process.env.OPENWEATHER_API_KEY;
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&lang=pt_br&units=metric`;
+
+    const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&lang=pt_br&units=metric`;
+
+    const hourlyForecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&lang=pt_br&units=metric`;
 
     try {
-        const response = await axios.get(url);
-        const data = response.data;
-        res.json(data);
+        const currentResponse = await axios.get(currentWeatherUrl);
+        const currentData = currentResponse.data;
+
+        const forecastResponse = await axios.get(hourlyForecastUrl);
+        const forecastData = forecastResponse.data;
+
+        console.log(forecastData);
+
+        const hourlyForecast = forecastData.list
+            .slice(0, 3)
+            .map((forecast) => ({
+                time: forecast.dt_txt,
+                temperature: forecast.main.temp,
+            }));
+
+        const fiveDayForecast = forecastData.list.map((forecast) => ({
+            time: forecast.dt_txt,
+            temperature: forecast.main.temp,
+        }));
+
+        res.json({
+            currentWeather: currentData,
+            hourlyForecast: hourlyForecast,
+            fiveDayForecast: fiveDayForecast,
+        });
     } catch (error) {
         console.log("Erro na solicitação:", error);
         res.status(500).send("Erro ao processar a solicitação");
