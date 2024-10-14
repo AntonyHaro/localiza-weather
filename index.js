@@ -48,8 +48,8 @@ app.post("/city/:city", async (req, res) => {
 
 app.get("/weather/:city", async (req, res) => {
     const { city } = req.params;
-    const apiKey = dotenv.process.OPENWEATHER_API_KEY;
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&lang=pt_br&unit=metric`;
+    const apiKey = process.env.OPENWEATHER_API_KEY;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&lang=pt_br&units=metric`;
 
     try {
         const response = await axios.get(url);

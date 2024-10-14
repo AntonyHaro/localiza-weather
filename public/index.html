@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="css/home.css" />
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
-        <script src="js/home.js" defer></script>
+        <script src="js/home.js" type="module" defer></script>
     </head>
     <body>
         <header>
@@ -44,8 +44,8 @@
                     <h1>5°c</h1>
                     <p>Nublado</p>
                     <p class="temperature">
-                        <span class="max-temperature">26°c</span> /
-                        <span class="min-temperature">2°c</span>
+                        <span class="max-temperature">Max</span> /
+                        <span class="min-temperature">Min</span>
                     </p>
                 </div>
                 <div class="location-info">
@@ -105,7 +105,7 @@
                                 />
                                 <span>
                                     <p>Amanhecer</p>
-                                    <h1 id="sunrise">6:12</h1></span
+                                    <h1 id="sunrise"></h1></span
                                 >
                             </div>
                             <div class="info-item">
@@ -116,7 +116,7 @@
                                 />
                                 <span>
                                     <p>Anoitecer</p>
-                                    <h1 id="sunset">18:02</h1></span
+                                    <h1 id="sunset"></h1></span
                                 >
                             </div>
                         </div>
@@ -139,7 +139,7 @@
                             />
                             <span>
                                 <p>Pressão</p>
-                                <h2 id="pressure">1025hPa</h2></span
+                                <h2 id="pressure"></h2></span
                             >
                         </div>
                         <div class="info-item">
@@ -150,7 +150,7 @@
                             />
                             <span>
                                 <p>Sensação de temperatura</p>
-                                <h2>25°</h2></span
+                                <h2 id="feels-like"></h2></span
                             >
                         </div>
                     </div>
