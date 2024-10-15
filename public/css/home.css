@@ -9,11 +9,16 @@ body {
     background-color: var(--body-bgc);
     color: var(--text-color);
     min-height: 100vh;
-    display: grid;
-    gap: 5rem;
-    padding: 3rem;
-    padding-bottom: 6rem;
     font-size: 13px;
+    /* padding: 3rem; */
+    /* padding-bottom: 6rem; */
+}
+
+.padding-container {
+    padding: 3rem;
+    display: flex; /* Mude para flex */
+    flex-direction: column; /* Organiza os filhos em uma coluna */
+    gap: 5rem;
 }
 
 header {
@@ -90,6 +95,7 @@ header form img {
 }
 
 main {
+    flex: 1;
     display: grid;
     gap: 4rem;
 }
@@ -303,4 +309,23 @@ canvas {
 #week-graph {
     background-color: none;
     max-height: 30rem;
+}
+
+footer {
+    width: 100%;
+    background-color: var(--primary-bgc);
+    color: var(--text-color);
+    text-align: center;
+    font-size: 14px;
+    margin-top: 5%;
+    padding: 3rem;
+}
+
+footer a {
+    color: #8bb6e4;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }

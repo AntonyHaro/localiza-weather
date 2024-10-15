@@ -85,6 +85,8 @@ async function handleSearch(event) {
 
     const weather = await fetchWeather(data.localidade);
     fillWeatherInfo(weather);
+    createHourForecastGraph(weather.hourlyForecast);
+    createWeekForecastGraph(weather.fiveDayForecast);
 }
 
 // Fill the location info into the DOM

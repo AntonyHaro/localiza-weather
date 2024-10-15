@@ -9,7 +9,7 @@ export function createHourForecastGraph(forecast) {
 
     // get the time and temperature for each item in the forecast
     forecast.forEach((item) => {
-        data.push(item.temperature);
+        data.push(item.temperature.toFixed(1));
 
         // format the time to display only the hour
         const time = item.time.split(" ")[1];
@@ -25,8 +25,8 @@ export function createHourForecastGraph(forecast) {
                 {
                     label: "Temperatura (°C)",
                     data: data,
-                    backgroundColor: "rgba(75, 192, 192, 0.1)",
-                    borderColor: "gray",
+                    backgroundColor: "#ffff7525",
+                    borderColor: "#ffff7546",
                     borderWidth: 2,
                 },
             ],
@@ -73,7 +73,7 @@ export function createWeekForecastGraph(forecast) {
 
     // get the time and temperature for each item in the forecast
     forecast.forEach((item) => {
-        data.push(item.temperature);
+        data.push(item.temperature.toFixed(0));
 
         // format the time to display only the date
         const time = item.time.split(" ")[0].slice(5);
@@ -88,9 +88,9 @@ export function createWeekForecastGraph(forecast) {
                 {
                     label: "Temperatura (°C)",
                     data: data,
-                    backgroundColor: "rgba(75, 192, 192, 0.1)",
+                    backgroundColor: "#ffff7525",
                     fill: true,
-                    borderColor: "gray",
+                    borderColor: "#ffff7546",
                     borderWidth: 3,
                 },
             ],
