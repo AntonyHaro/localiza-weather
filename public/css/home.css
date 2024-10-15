@@ -33,20 +33,19 @@ header a {
     color: var(--text-color);
 }
 
-header h1 {
+.logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
 }
 
-header svg {
+.logo img {
     height: 30px;
-    fill: #ffff75;
     animation: rotate360 10s infinite linear;
     transition: 0.2s;
+    margin-right: 0.5rem;
 }
 
-header span {
+.logo span {
     transition: 0.15s;
     color: #ffff75;
 }
@@ -315,10 +314,32 @@ footer {
     width: 100%;
     background-color: var(--primary-bgc);
     color: var(--text-color);
-    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     font-size: 14px;
     margin-top: 5%;
-    padding: 3rem;
+    padding: 2rem;
+}
+
+footer .main {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.developer {
+    color: gray;
+    margin-top: 5%;
+}
+
+hr {
+    height: 8rem;
+    border: 1px solid rgb(90, 90, 90);
+}
+
+footer .info {
+    display: grid;
+    gap: 1.5rem;
 }
 
 footer a {
