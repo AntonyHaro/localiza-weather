@@ -22,7 +22,7 @@ app.post("/city/:city", async (req, res) => {
                     { role: "system", content: "Você é um assistente útil." },
                     {
                         role: "user",
-                        content: `Descreva a cidade ${city} em 70 palavras. Não minta.`,
+                        content: `Descreva a cidade ${city} em 60 palavras. Não minta.`,
                     },
                 ],
             },

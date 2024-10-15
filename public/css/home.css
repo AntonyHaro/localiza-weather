@@ -312,11 +312,12 @@ canvas {
 
 footer {
     width: 100%;
-    background-color: var(--primary-bgc);
+    background-color: var(--secondary-bgc);
     color: var(--text-color);
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+    gap: 5rem;
     font-size: 14px;
     margin-top: 5%;
     padding: 2rem;

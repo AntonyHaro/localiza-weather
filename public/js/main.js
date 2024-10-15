@@ -114,6 +114,7 @@ async function fillLocationInfo(data) {
 
 function fillWeatherInfo(weather) {
     console.log(weather);
+    console.log(weather.currentWeather.weather[0]);
 
     const formattedSunriseSunset = formatSunriseSunset(
         weather.currentWeather.sys.sunrise,
