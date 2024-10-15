@@ -1,13 +1,19 @@
-const express = require("express");
-const axios = require("axios");
-const path = require("path");
+import express from "express";
+import axios from "axios";
+import path from "path";
+import dotenv from "dotenv";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const app = express();
-require("dotenv").config();
+dotenv.config();
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
-// endpoint to generate the description from the param city using the openAI api
+// endpoint to get the city description from the openAI API
 app.post("/city/:city", async (req, res) => {
     const { city } = req.params;
     const url = "https://api.openai.com/v1/chat/completions";
@@ -41,12 +47,12 @@ app.post("/city/:city", async (req, res) => {
     }
 });
 
+// endpoint to get the current weather and the forecast
 app.get("/currentWeather/:city", async (req, res) => {
     const { city } = req.params;
     const apiKey = process.env.OPENWEATHER_API_KEY;
 
     const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&lang=pt_br&units=metric`;
-
     const hourlyForecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&lang=pt_br&units=metric`;
 
     try {
