@@ -28,14 +28,31 @@ header a {
     color: var(--text-color);
 }
 
-header img {
-    height: 30px;
-}
-
 header h1 {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+}
+
+header svg {
+    height: 30px;
+    fill: #ffff75;
+    animation: rotate360 10s infinite linear;
+    transition: 0.2s;
+}
+
+header span {
+    transition: 0.15s;
+    color: #ffff75;
+}
+
+@keyframes rotate360 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 header ul {
@@ -80,13 +97,13 @@ main {
 #main-info {
     display: flex;
     gap: 2rem;
+    height: 24rem;
 }
 
 #main-info .card {
     background-image: url("https://i.pinimg.com/originals/84/41/3b/84413b084032a95c7705b5eaeb4ce3b7.jpg");
     background-size: cover;
     background-position: center;
-    /* background-repeat: no-repeat; */
     box-shadow: -1px 1px 5px hsla(0, 0%, 0%, 0.5);
     width: 30%;
     padding: 2rem;
@@ -106,19 +123,21 @@ main {
     font-size: 2em;
 }
 
-.card .max-temperature {
+.card #max-temperature {
     font-weight: bold;
     color: hsl(0, 76%, 39%);
 }
 
-.card .min-temperature {
+.card #min-temperature {
     font-weight: bold;
     color: hsl(219, 100%, 85%);
 }
 
 #main-info .location-info {
     flex: 1;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     gap: 1rem;
 }
 

@@ -20,6 +20,8 @@ const feelsLikeArea = document.getElementById("feels-like");
 const pressureArea = document.getElementById("pressure");
 const sunsetArea = document.getElementById("sunset");
 const sunriseArea = document.getElementById("sunrise");
+const maxTempArea = document.getElementById("max-temperature");
+const minTempArea = document.getElementById("min-temperature");
 
 async function fetchCep(cep) {
     try {
@@ -36,7 +38,7 @@ async function fetchCep(cep) {
     }
 }
 
-async function getWeather(city) {
+async function fetchWeather(city) {
     try {
         const response = await fetch(`/currentWeather/${city}`);
 
@@ -81,7 +83,7 @@ async function handleSearch(event) {
     if (!data) return;
     fillLocationInfo(data);
 
-    const weather = await getWeather(data.localidade);
+    const weather = await fetchWeather(data.localidade);
     fillWeatherInfo(weather);
 }
 
@@ -112,15 +114,21 @@ function fillWeatherInfo(weather) {
     console.log(weather);
 
     const formattedSunriseSunset = formatSunriseSunset(
-        weather.sys.sunrise,
-        weather.sys.sunset
+        weather.currentWeather.sys.sunrise,
+        weather.currentWeather.sys.sunset
     );
-
     sunriseArea.textContent = formattedSunriseSunset.sunrise;
     sunsetArea.textContent = formattedSunriseSunset.sunset;
-    humidityArea.textContent = weather.main.humidity + "%";
-    pressureArea.textContent = weather.main.pressure + "hPa";
-    feelsLikeArea.textContent = weather.main.feels_like + "°C";
+
+    maxTempArea.textContent =
+        weather.currentWeather.main.temp_max.toFixed(1) + "°C";
+    minTempArea.textContent =
+        weather.currentWeather.main.temp_min.toFixed(1) + "°C";
+    feelsLikeArea.textContent =
+        weather.currentWeather.main.feels_like.toFixed(1) + "°C";
+
+    humidityArea.textContent = weather.currentWeather.main.humidity + "%";
+    pressureArea.textContent = weather.currentWeather.main.pressure + "hPa";
 }
 
 function formatSunriseSunset(sunrise, sunset) {
@@ -152,15 +160,17 @@ window.addEventListener("DOMContentLoaded", async () => {
     document.querySelector("form").addEventListener("submit", handleSearch);
     dateArea.textContent = getDate();
 
-    // set the default data to display in the page
+    // Set the default data to display in the page
     const defaultData = await fetchCep("01001000");
 
     if (!defaultData) return;
     fillLocationInfo(defaultData);
 
-    const weather = await getWeather(data.localidade);
+    const weather = await fetchWeather(defaultData.localidade);
     fillWeatherInfo(weather);
 
-    createHourForecastGraph();
-    createWeekForecastGraph();
+    createHourForecastGraph(weather.hourlyForecast);
+    createWeekForecastGraph(weather.fiveDayForecast);
 });
+
+// mudar a cor da temperatura mais alta e mais baixa nos gráficos

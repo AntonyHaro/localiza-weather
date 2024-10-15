@@ -56,10 +56,8 @@ app.get("/currentWeather/:city", async (req, res) => {
         const forecastResponse = await axios.get(hourlyForecastUrl);
         const forecastData = forecastResponse.data;
 
-        console.log(forecastData);
-
         const hourlyForecast = forecastData.list
-            .slice(0, 3)
+            .slice(0, 12)
             .map((forecast) => ({
                 time: forecast.dt_txt,
                 temperature: forecast.main.temp,

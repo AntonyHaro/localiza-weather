@@ -26,7 +26,7 @@ export function getDate() {
 
     const dateTime = new Date();
 
-    const month = String(dateTime.getMonth() + 1).padStart(2, "0"); // Meses começam do 0
+    const month = String(dateTime.getMonth() + 1).padStart(2, "0");
     const day = String(dateTime.getDate()).padStart(2, "0");
 
     const dayOfWeek = dateTime.getDay();

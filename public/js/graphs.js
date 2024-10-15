@@ -1,16 +1,30 @@
-export function createHourForecastGraph() {
+export function createHourForecastGraph(forecast) {
     const ctx = document.getElementById("hour-graph").getContext("2d");
     if (window.hourForecast) {
         window.hourForecast.destroy();
     }
+
+    let labels = [];
+    let data = [];
+
+    // get the time and temperature for each item in the forecast
+    forecast.forEach((item) => {
+        data.push(item.temperature);
+
+        // format the time to display only the hour
+        const time = item.time.split(" ")[1];
+        labels.push(time.slice(0, 5));
+    });
+
+    // create the graph with the processed data
     window.hourForecast = new Chart(ctx, {
         type: "bar",
         data: {
-            labels: ["02:00", "04:00", "06:00"],
+            labels: labels,
             datasets: [
                 {
                     label: "Temperatura (°C)",
-                    data: [12, 21, 19],
+                    data: data,
                     backgroundColor: "rgba(75, 192, 192, 0.1)",
                     borderColor: "gray",
                     borderWidth: 2,
@@ -35,7 +49,6 @@ export function createHourForecastGraph() {
                     },
                 },
                 y: {
-                    // beginAtZero: true,
                     display: false,
                     grid: {
                         display: false,
@@ -45,23 +58,36 @@ export function createHourForecastGraph() {
             responsive: true,
             maintainAspectRatio: true,
         },
-        plugins: [ChartDataLabels],
+        plugins: [ChartDataLabels], // plugin to display the data labels
     });
 }
 
-export function createWeekForecastGraph() {
+export function createWeekForecastGraph(forecast) {
     const ctx = document.getElementById("week-graph").getContext("2d");
     if (window.weekForecast) {
         window.weekForecast.destroy();
     }
+
+    let labels = [];
+    let data = [];
+
+    // get the time and temperature for each item in the forecast
+    forecast.forEach((item) => {
+        data.push(item.temperature);
+
+        // format the time to display only the date
+        const time = item.time.split(" ")[0].slice(5);
+        labels.push(time);
+    });
+
     window.weekForecast = new Chart(ctx, {
         type: "line",
         data: {
-            labels: ["Segunda", "Terça", "Quarta", "Quinta", "Sexta"],
+            labels: labels,
             datasets: [
                 {
                     label: "Temperatura (°C)",
-                    data: [12, 21, 19, 30, 25],
+                    data: data,
                     backgroundColor: "rgba(75, 192, 192, 0.1)",
                     fill: true,
                     borderColor: "gray",
