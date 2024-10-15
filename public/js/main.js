@@ -42,13 +42,12 @@ async function fetchWeather(city) {
     try {
         const response = await fetch(`/currentWeather/${city}`);
 
-        if (!response.ok)
-            throw new Error("Erro na solicitação de descrição da cidade");
+        if (!response.ok) throw new Error("Erro ao buscar o clima da cidade");
 
         const data = await response.json();
         return data;
     } catch (error) {
-        console.error("Erro ao fazer a solicitação:", error);
+        console.error("Erro ao buscar o clima da cidade");
         return null;
     }
 }
@@ -64,12 +63,12 @@ async function getCityDescription(city) {
         });
 
         if (!response.ok)
-            throw new Error("Erro na solicitação de descrição da cidade");
+            throw new Error("Erro ao buscar a descrição da cidade");
 
         const data = await response.json();
         return data.reply;
     } catch (error) {
-        console.error("Erro ao fazer a solicitação:", error);
+        console.error("Erro ao buscar a descrição da cidade");
         return null;
     }
 }
