@@ -22,6 +22,7 @@ const sunsetArea = document.getElementById("sunset");
 const sunriseArea = document.getElementById("sunrise");
 const maxTempArea = document.getElementById("max-temperature");
 const minTempArea = document.getElementById("min-temperature");
+const currentTemperature = document.getElementById("current-temperature");
 
 async function fetchCep(cep) {
     try {
@@ -99,7 +100,7 @@ async function fillLocationInfo(data) {
     dddArea.textContent = data.ddd;
     ufArea.textContent = data.uf;
 
-    localArea.textContent = `${data.cep}, ${data.localidade} - ${data.uf} 📍`;
+    localArea.textContent = `${data.cep}, ${data.localidade} - ${data.uf} 🌎`;
 
     const cityDescription = await getCityDescription(data.localidade);
 
@@ -122,6 +123,8 @@ function fillWeatherInfo(weather) {
     sunriseArea.textContent = formattedSunriseSunset.sunrise;
     sunsetArea.textContent = formattedSunriseSunset.sunset;
 
+    currentTemperature.textContent =
+        weather.currentWeather.main.temp.toFixed(1) + "°C";
     maxTempArea.textContent =
         weather.currentWeather.main.temp_max.toFixed(1) + "°C";
     minTempArea.textContent =
@@ -176,3 +179,21 @@ window.addEventListener("DOMContentLoaded", async () => {
 });
 
 // mudar a cor da temperatura mais alta e mais baixa nos gráficos
+
+function resizeCanvas() {
+    const canvas = document.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+
+    // Define o tamanho real do canvas baseado no tamanho visual do CSS
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+
+    // Aqui você pode redesenhar o conteúdo do canvas
+    // ctx.fillRect(0, 0, canvas.width, canvas.height); // Exemplo de desenho
+}
+
+// Chama a função de redimensionamento quando a janela for redimensionada
+window.addEventListener("resize", resizeCanvas);
+
+// Chama a função inicialmente para definir o tamanho correto
+resizeCanvas();
